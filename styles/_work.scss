@@ -1,0 +1,44 @@
+@import "./variables";
+@import "./mixins";
+
+.section-work {
+  @include mobile-grid;
+  background-color: $add-5;
+  background: linear-gradient(225deg, $add-3 0%, $add-4 65%, $add-5 100%);
+
+  &--title {
+    display: grid;
+    grid-area: header;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+
+    .section-title {
+      @include section-title-mobile;
+    }
+  }
+
+  &-wrapper {
+    display: grid;
+    grid-area: content;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+
+    .section-description {
+      @include section-description-mobile;
+
+      &--title {
+        @include section-description-title-mobile;
+      }
+
+      .section-paragraph {
+        @include section-paragraph-mobile;
+        font-weight: 800;
+      }
+    }
+  }
+}

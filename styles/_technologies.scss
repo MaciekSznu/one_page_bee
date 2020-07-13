@@ -1,0 +1,117 @@
+@import "./variables";
+@import "./mixins";
+
+.section-technologies {
+  @include mobile-grid;
+  background-color: $add-5;
+  background: linear-gradient(135deg, $add-5 0%, $add-4 35%, $add-3 100%);
+
+  &--title {
+    display: grid;
+    grid-area: header;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+
+    .section-title {
+      @include section-title-mobile;
+    }
+  }
+
+  &--wrapper {
+    display: grid;
+    grid-area: content;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+
+    .section-description {
+      @include section-description-mobile;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      .technologies-icon {
+        margin: 0.5rem;
+        width: 25%;
+        max-height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__image {
+          height: 70%;
+          filter: $technologies-icon-filter;
+        }
+
+        &__description {
+          margin-top: 0.5rem;
+          font-family: $text-base-font;
+          font-size: 0.8rem;
+          color: $technologies-icon-description-color;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    &-wrapper {
+      @include section-wrapper-tablet;
+
+      .section-title {
+        @include section-title-tablet;
+      }
+
+      .section-description {
+        .technologies-icon {
+          margin: 1rem;
+          width: 25%;
+          max-height: 100px;
+
+          &__description {
+            margin-top: 0.75rem;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    background-color: $add-4;
+    width: 50%;
+    height: calc(50vh + #{$mobile-header-height});
+    min-height: 450px;
+    padding-top: 0;
+
+    // &::before {
+    //   @include dots-bg;
+    //   top: 66px;
+    //   background: linear-gradient(90deg, $add-4 8px, transparent 1%) center,
+    //   linear-gradient($add-4 8px, transparent 1%) center,
+    //   #ffffff;
+    //   background-size: 10px 10px;
+    // }
+
+    &-wrapper {
+      @include section-wrapper-desktop;
+      background-color: $add-4;
+
+      .section-title {
+        @include section-title-desktop;
+      }
+
+      .section-description {
+        @include section-description-desktop;
+
+        .section-paragraph {
+          @include section-paragraph-desktop;
+        }
+      }
+    }
+  }
+}

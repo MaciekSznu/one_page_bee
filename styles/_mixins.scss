@@ -1,0 +1,144 @@
+@mixin section-wrapper-mobile {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0 2rem;
+}
+
+@mixin section-title-mobile {
+  margin: 0;
+  font-family: $text-base-font;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+@mixin section-description-mobile {
+  height:100%;
+}
+
+@mixin section-description-title-mobile {
+  font-family: $text-base-font;
+  font-size: 1.5rem;
+  margin: 1rem 0 .25rem;
+  font-weight: 900;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #000000, -1px -1px 1px #000000, -1px 1px 1px #000000, 1px -1px 1px #000000;
+  letter-spacing: .15rem;
+}
+
+@mixin project-description-title {
+  font-family: $text-base-font;
+  font-size: 1.5rem;
+  margin: 1rem 0 .25rem;
+  font-weight: 800;
+  text-align: center;
+  color: #ffffff;
+  letter-spacing: .15rem;
+}
+
+@mixin section-paragraph-mobile {
+  font-family: $text-base-font;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  font-weight: 500;
+  text-align: center;
+}
+
+@mixin project-description-paragraph {
+  font-family: $text-base-font;
+  font-size: 1.1rem;
+  margin: .75rem 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+@mixin section-link {
+  display: block;
+  font-family: $text-base-font;
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  max-width: 220px;
+  border: 2px solid #000000;
+  border-radius: 2rem;
+  padding: .75rem 2rem;
+  margin: 1rem auto;
+}
+
+
+
+@mixin section-wrapper-tablet {
+  height: auto;
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1rem 0 2rem;
+}
+
+@mixin section-title-tablet {
+  margin: 0;
+  padding: 1rem 1.5rem 1rem 4rem;
+  font-family: $text-base-font;
+  font-size: 1.5rem;
+}
+
+@mixin section-description-tablet {
+  padding: .5rem 4rem;
+}
+
+@mixin section-paragraph-tablet {
+  font-family: $text-base-font;
+  font-size: 1.2rem;
+}
+
+@mixin section-wrapper-desktop {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@mixin section-title-desktop {
+  margin: 0;
+  padding-top: 1rem;
+  font-family: $text-base-font;
+  font-size: 2rem;
+  min-height: 15%;
+}
+
+@mixin section-description-desktop {
+  min-height: 60%;
+
+  padding-right: 4rem;
+}
+
+@mixin section-paragraph-desktop {
+  font-family: $text-base-font;
+  font-size: 1.2rem;
+}
+
+// @mixin dots-bg {
+//   position: absolute;
+//   width: 60px;
+//   height: 60px;
+//   content: '';
+// }
+
+@mixin mobile-grid {
+  height: 100vh;
+  position: relative;
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-rows: 60px calc(100vh - 120px) 60px;
+  grid-template-columns: 1rem 1fr 1rem;
+  grid-template-areas:
+    ". header ."
+    ". content ."
+    ". footer.";
+}

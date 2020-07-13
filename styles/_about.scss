@@ -1,0 +1,48 @@
+@import "./variables";
+@import "./mixins";
+
+.section-about {
+  @include mobile-grid;
+  background-color: $add-5;
+  background: linear-gradient(135deg, $add-5 0%, $add-4 35%, $add-3 100%);
+
+  &-wrapper {
+    display: grid;
+    grid-area: content;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      background-image: url("./images/logo/inverted_new_logo_120_120.svg");
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      margin: 0.75rem auto;
+    }
+
+    .company-wrapper {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      height: 4rem;
+
+      #animated-logo {
+        width: 80%;
+      }
+    }
+
+    .section-title {
+      @include section-title-mobile;
+      height: 4rem;
+      line-height: 4rem;
+
+      @media (min-width: 375px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
