@@ -7,6 +7,7 @@
 
 @mixin section-description-mobile {
   height:100%;
+  z-index: 1;
 }
 
 @mixin section-description-title {

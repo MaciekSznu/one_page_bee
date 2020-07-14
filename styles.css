@@ -477,6 +477,7 @@ template {
 
 .section-contact--wrapper .section-description {
   height: 100%;
+  z-index: 1;
 }
 
 .section-contact--wrapper .section-description .section-paragraph {
@@ -559,8 +560,23 @@ template {
   height: 100%;
 }
 
+.section-work-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/svg/tools_chaos_500_400.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: .6;
+}
+
 .section-work-wrapper .section-description {
   height: 100%;
+  z-index: 1;
 }
 
 .section-work-wrapper .section-description--title {
@@ -644,6 +660,7 @@ template {
 
 .section-projects .project-wrapper .project-description {
   height: 100%;
+  z-index: 1;
 }
 
 .section-projects .project-wrapper .project-description--title {
@@ -828,6 +845,7 @@ template {
 
 .section-technologies--wrapper .section-description {
   height: 100%;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
