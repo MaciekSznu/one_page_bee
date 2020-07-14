@@ -1,12 +1,4 @@
-@mixin section-wrapper-mobile {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 0 2rem;
-}
-
-@mixin section-title-mobile {
+@mixin section-title {
   margin: 0;
   font-family: $text-base-font;
   font-size: 1.25rem;
@@ -17,28 +9,30 @@
   height:100%;
 }
 
-@mixin section-description-title-mobile {
+@mixin section-description-title {
   font-family: $text-base-font;
   font-size: 1.5rem;
   margin: 1rem 0 .25rem;
   font-weight: 900;
   text-align: center;
   color: #ffffff;
-  text-shadow: 1px 1px 1px #000000, -1px -1px 1px #000000, -1px 1px 1px #000000, 1px -1px 1px #000000;
-  letter-spacing: .15rem;
+  // text-shadow: 1px 1px 1px #000000, -1px -1px 1px #000000, -1px 1px 1px #000000, 1px -1px 1px #000000;
+  letter-spacing: .1rem;
+  // -webkit-text-fill-color: #ffffff;
+  // -webkit-text-stroke: 1px #000000;
 }
 
 @mixin project-description-title {
   font-family: $text-base-font;
   font-size: 1.5rem;
-  margin: 1rem 0 .25rem;
+  margin: 0;
   font-weight: 800;
   text-align: center;
   color: #ffffff;
-  letter-spacing: .15rem;
+  letter-spacing: .1rem;
 }
 
-@mixin section-paragraph-mobile {
+@mixin section-paragraph {
   font-family: $text-base-font;
   font-size: 1.1rem;
   margin: 1rem 0;
@@ -55,18 +49,57 @@
 }
 
 @mixin section-link {
+  position: relative;
   display: block;
   font-family: $text-base-font;
-  color: #000000;
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: 800;
   text-align: center;
   text-decoration: none;
   max-width: 220px;
-  border: 2px solid #000000;
+  border: 2px solid #ffffff;
   border-radius: 2rem;
   padding: .75rem 2rem;
   margin: 1rem auto;
+  overflow: hidden;
+  background: transparent;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(#ffffff, .4), transparent);
+    transform: translateX(-100%);
+  }
+
+  &:hover:before {
+    transform: translateX(200%);
+    transition: .75s;
+  }
+}
+
+@mixin contact-paragraph {
+  font-family: $text-base-font;
+  font-size: .9rem;
+  margin: 0;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+@mixin contact-link {
+  display: block;
+  font-family: $text-base-font;
+  color: #000000;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
 }
 
 
@@ -140,5 +173,13 @@
   grid-template-areas:
     ". header ."
     ". content ."
-    ". footer.";
+    ". footer .";
+}
+
+@mixin section-background {
+  background-color: $add-5;
+  background: linear-gradient(135deg, $add-5 0%, $add-4 30%, $add-3 100%);
+  &:nth-of-type(odd) {
+    background: linear-gradient(225deg, $add-3 0%, $add-4 70%, $add-5 100%);
+  }
 }

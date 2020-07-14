@@ -3,8 +3,7 @@
 
 .section-projects {
   @include mobile-grid;
-  background-color: $add-5;
-  background: linear-gradient(135deg, $add-5 0%, $add-4 35%, $add-3 100%);
+  @include section-background;
 
   &--title {
     display: grid;
@@ -15,7 +14,7 @@
     height: 100%;
 
     .section-title {
-      @include section-title-mobile;
+      @include section-title;
     }
   }
 

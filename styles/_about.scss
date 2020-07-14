@@ -3,8 +3,7 @@
 
 .section-about {
   @include mobile-grid;
-  background-color: $add-5;
-  background: linear-gradient(135deg, $add-5 0%, $add-4 35%, $add-3 100%);
+  @include section-background;
 
   &-wrapper {
     display: grid;
@@ -14,11 +13,15 @@
     align-items: center;
     align-content: center;
     height: 100%;
+    background-image: url("./images/logo/logo_white_015.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
 
     .logo {
       width: 60px;
       height: 60px;
-      background-image: url("./images/logo/inverted_new_logo_120_120.svg");
+      background-image: url("./images/logo/transparent_new_logo_120_120.svg");
       background-repeat: no-repeat;
       background-origin: content-box;
       margin: 0.75rem auto;
@@ -36,7 +39,7 @@
     }
 
     .section-title {
-      @include section-title-mobile;
+      @include section-title;
       height: 4rem;
       line-height: 4rem;
 
