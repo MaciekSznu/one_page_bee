@@ -18,3 +18,20 @@ const loadedPaths = () => window.addEventListener("load", function() {
 });
 
 loadedPaths();
+
+const techIconsTl = anime.timeline({
+  targets: '.technologies-icon',
+  delay: anime.stagger(500),
+  duration: 750,
+  easing: 'easeOutExpo',
+  // direction: 'alternate',
+  loop: true
+});
+
+techIconsTl.add({
+  opacity: 0,
+}).
+add({
+  opacity: 1,
+});
+
