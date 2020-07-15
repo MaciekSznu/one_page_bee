@@ -28,10 +28,11 @@ const techIconsTl = anime.timeline({
   loop: true
 });
 
-techIconsTl.add({
-  opacity: 0,
-}).
-add({
-  opacity: 1,
-});
+// !!! uncomment for animation works !!!
+// techIconsTl.add({
+//   opacity: 0,
+// }).
+// add({
+//   opacity: 1,
+// });
 

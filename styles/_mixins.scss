@@ -94,12 +94,29 @@
 @mixin contact-link {
   display: block;
   font-family: $text-base-font;
-  color: #000000;
+  color: #ffffff;
   font-size: 1.25rem;
   font-weight: 800;
   text-align: center;
   text-decoration: none;
   margin: 0;
+
+  &:hover {
+    mask-image: linear-gradient(-75deg, rgba(#fff, 1) 30%, rgba($add-4, .5) 50%, rgba(#fff, 1) 70%);
+    // -webkit-mask-image: linear-gradient(-75deg, rgba(#fff, 1) 30%, rgba($add-4, .5) 50%, rgba(#fff, 1) 70%);
+    mask-size: 275%;
+    animation: shine 1.25s;
+  }
+
+  @keyframes shine {
+    from {
+      -webkit-mask-position: 100%;
+    }
+    
+    to {
+      -webkit-mask-position: -50%;
+    }
+  }
 }
 
 
