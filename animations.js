@@ -13,8 +13,15 @@ const loadedPaths = () => window.addEventListener("load", function() {
     delay: 200,
     // delay: function(el, i) { return i * 250 },
     direction: 'alternate',
-    loop: 3
+    loop: false
   });
+  // anime({
+  //   targets: elements,
+  //   fill: ['rgba(255,255,255,0)', '#ffffff'],
+  //   delay: 2000,
+  //   duration: 1500,
+  //   easing: 'linear'
+  // });
 });
 
 loadedPaths();

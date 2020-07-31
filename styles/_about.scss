@@ -16,7 +16,7 @@
     background-image: url("./images/logo/logo_white_015.svg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: contain;
 
     .logo {
       width: 60px;
@@ -35,6 +35,7 @@
 
       #animated-logo {
         width: 80%;
+        max-width: 320px;
       }
     }
 
@@ -44,7 +45,7 @@
       line-height: 4rem;
 
       @media (min-width: 375px) {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
       }
     }
   }

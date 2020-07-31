@@ -10,11 +10,44 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <section class='menu-dots-wrapper'>
+    <button class="menu-toggler">
+      <span class="menu-toggler-line"></span>
+      <span class="menu-toggler-line"></span>
+      <span class="menu-toggler-line"></span>
+      <span class="menu-toggler-line"></span>
+    </button>
+    <div class='menu-dots'>
+      <div class='menu-dots__item active'></div>
+      <div class='menu-dots__item'></div>
+      <div class='menu-dots__item'></div>
+      <div class='menu-dots__item'></div>
+      <div class='menu-dots__item'></div>
+    </div>
+  </section>
+<header>
+  <nav aria-label='primary' class='menu'>
+    <ul class="menu__list">
+      <li class="menu__list-item" ><a href="#section-about">home</a></li>
+      <li class="menu__list-item">
+        <a href="#section-work">oferta</a>
+      </li>
+      <li class="menu__list-item">
+        <a href="#project-01">projekty</a>
+      </li><li class="menu__list-item">
+        <a href="#section-technologies">technologie</a>
+      </li>
+      <li class="menu__list-item">
+        <a href="#section-contact">kontakt</a>
+      </li>
+    </ul>
+  </nav>
+</header>
   <section class='section-about' id='section-about'>
     <div class='section-about-wrapper'>
       <div class='logo'></div>
       <div class='company-wrapper'>
-        <object id="animated-logo" data="./images//logo/beeontheweb.svg" type="image/svg+xml"></object>
+        <object id="animated-logo" data="./images//logo/new_text_logo.svg" type="image/svg+xml"></object>
       </div>
       <h2 class='section-title'>zaistniej w internecie</h2>
     </div>
@@ -113,20 +146,6 @@
       </div>
     </div>
   </section>
-
-  <!-- <section class='slider-nav'>
-    <div class='slider-nav__wrapper'>
-      <input class='slider-nav__wrapper--item' type='radio' id='01' name='slider-group' checked>
-      <input class='slider-nav__wrapper--item' type='radio' id='01' name='slider-group'>
-      <input class='slider-nav__wrapper--item' type='radio' id='01' name='slider-group'>
-      <input class='slider-nav__wrapper--item' type='radio' id='01' name='slider-group'>
-    </div>
-  </section> -->
-  <!-- <section class='menu__toggler'>
-    <button class="hamburger-menu">
-      <span class="hamburger-menu-line"></span>
-    </button>
-  </section> -->
   <section class='section-contact' id='section-contact'>
     <div class='section-contact--title'>
       <h2 class='section-title'>kontakt</h2>
@@ -136,7 +155,7 @@
         <p class='section-paragraph'>napisz do nas</p>
         <a class='section-paragraph--link' href='mailto: bee@beeontheweb.pl'>bee@beeontheweb.pl</a>
         <p class='section-paragraph'>zadzwoń</p>
-        <a class='section-paragraph--link' href='tel:602-755-332'>602-755-332</a>
+        <a class='section-paragraph--link' href='tel:+48-602-755-332'>602-755-332</a>
         <p class='section-paragraph'>śledź nas w sieci</p>
         <a class='section-paragraph--link' href='https://www.facebook.com'>facebook</a>
         <a class='section-paragraph--link' href='https://www.instagram.com'>instagram</a>
