@@ -57,20 +57,23 @@
     align-items: center;
     padding-bottom: 60px;
 
-    &__item {
-      width: 14px;
-      height: 14px;
-      border: 2px solid white;
-      border-radius: 50%;
-      background-color: transparent;
+    a {
       margin: 20px 10px 0;
 
       &:first-of-type {
         margin-top: 0;
       }
+
+      .menu-dots__item {
+        width: 14px;
+        height: 14px;
+        border: 2px solid white;
+        border-radius: 50%;
+        background-color: transparent;
+      }
     }
 
-    &__item.active {
+    a .menu-dots__item.active {
       background-color: #ffffff;
     }
   }

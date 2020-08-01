@@ -1,7 +1,7 @@
 @import "./variables";
 @import "./mixins";
 
-header {
+.menu-wrapper {
   @include mobile-grid;
   @include menu-background;
   position: absolute;
@@ -41,6 +41,6 @@ header {
   }
 }
 
-header.visible {
+.menu-wrapper.visible {
   transform: translateX(-100vw);
 }

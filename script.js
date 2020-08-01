@@ -1,73 +1,70 @@
-// 'use strict';
+'use strict';
 
-// const clickPreventDefault = (target, callback) => {
-//   target.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     return callback(e)
-//   });
-// };
+// BASE FUNCTIONS
+const clickPreventDefault = (target, callback) => {
+  target.addEventListener('click', (e) => {
+    e.preventDefault();
+    return callback(e)
+  });
+};
 
-// const click = (target, callback) => {
-//   target.addEventListener('click', (e) => {
-//     return callback(e)
-//   });
-// };
+const click = (target, callback) => {
+  target.addEventListener('click', (e) => {
+    return callback(e)
+  });
+};
 
-// const socialAsideButtons = document.querySelectorAll('a[class^="social"][class$="link"]');
+// MENU & MENU BUTTON
+const menuButton = document.querySelector('.menu-toggler');
+const menu = document.querySelector('.menu-wrapper');
 
-// const changeSocialColors = () => socialAsideButtons.forEach((item) => {
-//   item.classList.toggle('filtered');
-// });
+const showMenu = () => {
+  menu.classList.toggle('visible');
+};
 
-// const hamburgerButton = document.querySelector('.hamburger-menu');
-// const mobileMenu = document.querySelector('.menu');
+menuButton.addEventListener('click', (e) => {
+  showMenu();
+});
 
-// const showMobileMenu = () => {
-//   mobileMenu.classList.toggle('visible');
-// };
+// SCROLLING
+const documentSections = document.querySelectorAll('*[id^="section"], #project-01');
+const documentSectionsArray = [...documentSections];
 
-// const hamburgerActive = () => {
-//   hamburgerButton.classList.toggle('hamburger-active');
-// };
+const scrollToSection = (i) => {
+  documentSectionsArray[i].scrollIntoView({
+    bahavior: 'smooth'
+  });
+};
+
+// DOTS
+const dots = document.querySelectorAll('.menu-dots__item');
+const changeActiveDot = (index) => {
+  dots.forEach(item => {
+    item.classList.remove('active');
+  });
+  dots[index].classList.add('active');
+}
+
+//MENU LINKS
+const menuItems = document.querySelectorAll('.menu__list-item a');
+menuItems.forEach((item, index) => {
+  clickPreventDefault(item, () => {
+    scrollToSection(index);
+    showMenu();
+    changeActiveDot(index);
+  })
+});
+
+// dots as menu links
+dots.forEach((item, index) => {
+  clickPreventDefault(item, () => {
+    scrollToSection(index);
+    changeActiveDot(index);
+  })
+});
 
 
-// hamburgerButton.addEventListener('click', (e) => {
-//   showMobileMenu();
-//   hamburgerActive();
-//   changeSocialColors();
-// });
-
-// const mobileMenuItems = document.querySelectorAll('.menu__list-item:not(.to-section) a');
-// const mobileMenuItemsScroll = document.querySelectorAll('.menu__list-item.to-section a');
-// const documentSections = document.querySelectorAll('*[id^="section"]');
-// const documentSectionsArray = [...documentSections];
-
-// const scrollToSection = (i) => {
-//   documentSectionsArray[i].scrollIntoView({
-//     bahavior: 'smooth'
-//   });
-// };
-
-
-// mobileMenuItemsScroll.forEach((item, index) => {
-//   clickPreventDefault(item, () => {
-//     scrollToSection(index);
-//     const width = window.innerWidth;
-//     if ( width < 1024 ) {
-//       showMobileMenu();
-//       hamburgerActive();
-//       changeSocialColors();
-//     }
-//   })
-// });
-
-// mobileMenuItems.forEach((item) => {
-//   click(item, () => {
-//     const width = window.innerWidth;
-//     if ( width < 1024 ) {
-//       showMobileMenu();
-//       hamburgerActive();
-//       changeSocialColors();
-//     }
-//   })
-// });
+// viewport
+const box = document.querySelector('#section-about');
+const rect = box.getBoundingClientRect();
+console.log(rect);
