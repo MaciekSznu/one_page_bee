@@ -66,10 +66,9 @@ dots.forEach((item, index) => {
 
 
 // viewport
-
 const isInViewport = (el) => {
   const rect = el.getBoundingClientRect();
-  return rect.top === 0 ? true : false;
+  return rect.top <= 0  ? true : false;
 }
 
 const main = document.querySelector('#main');
