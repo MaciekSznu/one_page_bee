@@ -27,18 +27,34 @@
     align-content: center;
     height: 100%;
 
-    &::after {
+    &.work::after {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      max-width: 100vw;
       background-image: url("./images/svg/tools_chaos_500_400.svg");
-      background-position: top;
+      background-position: center;
       background-repeat: no-repeat;
       background-size: 100%;
-      opacity: .6;
+      opacity: .7;
+    }
+
+    &.cooperation::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("./images/svg/puzzle_100_100.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      opacity: .5;
+      transform: rotate(45deg);
     }
 
 
@@ -56,6 +72,7 @@
       .section-paragraph {
         @include section-paragraph;
         font-weight: 800;
+        margin-top: .5rem;
       }
     }
   }
