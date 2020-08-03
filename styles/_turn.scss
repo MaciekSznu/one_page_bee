@@ -1,0 +1,25 @@
+@import "./variables";
+@import "./mixins";
+
+#turn {
+  @include section-background;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .turn-information {
+    @include section-title;
+    height: 70vh;
+    line-height: 70vh;
+    background-image: url("./images/logo/logo_white_015.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+}

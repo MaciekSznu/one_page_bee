@@ -8,6 +8,8 @@
 @import "./styles/technologies";
 @import "./styles/menu-dots";
 @import "./styles/menu";
+@import "./styles/turn";
+
 
 
 
@@ -30,12 +32,28 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   overflow-y: scroll;
+
 }
 
 body {
   width: 100vw;
   height: 100vh;
   scroll-behavior: smooth;
+
+  #turn {
+    display: none
+  }
+
+  @media (max-width: 767px) and (orientation: landscape) {
+    width: 50vw;
+    height: 50vh;
+    #main {
+      visibility: hidden;
+    }
+    #turn {
+      display: flex;
+    }
+  }
 
   @include main-scrollbar;
 
