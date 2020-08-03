@@ -35,20 +35,9 @@ html {
 body {
   width: 100vw;
   height: 100vh;
-  
   scroll-behavior: smooth;
 
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
-  &::-webkit-scrollbar-track {
-    background: $add-3;
-    border-radius: 1px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $add-4;
-    border-radius: 1px;
-  }
+  @include main-scrollbar;
 
   main {
     display: flex;
@@ -57,5 +46,7 @@ body {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    @include main-scrollbar;
   }
 }

@@ -1211,17 +1211,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 4px;
-}
-
-body::-webkit-scrollbar-track {
-  background: #fbfcd4;
-  border-radius: 1px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: #ffdd03;
-  border-radius: 1px;
+  width: 0;
 }
 
 body main {
@@ -1237,5 +1227,10 @@ body main {
   overflow-y: scroll;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body main::-webkit-scrollbar {
+  width: 0;
 }
 /*# sourceMappingURL=styles.css.map */
