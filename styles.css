@@ -614,7 +614,7 @@ template {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 80%;
-  opacity: .5;
+  opacity: .4;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
@@ -1157,7 +1157,7 @@ template {
       grid-template-areas: ". header ." ". content ." ". footer .";
   background-color: #fbc403;
   background: radial-gradient(circle at center right, #fbc403 0%, #ffdd03 60%, #fbfcd4 100%);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 100vw;
   bottom: 0;
@@ -1256,6 +1256,7 @@ template {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
@@ -1290,6 +1291,16 @@ body::-webkit-scrollbar {
   width: 4px;
 }
 
+body::-webkit-scrollbar-track {
+  background: #fbfcd4;
+  border-radius: 1px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #ffdd03;
+  border-radius: 1px;
+}
+
 body main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1310,5 +1321,15 @@ body main {
 
 body main::-webkit-scrollbar {
   width: 4px;
+}
+
+body main::-webkit-scrollbar-track {
+  background: #fbfcd4;
+  border-radius: 1px;
+}
+
+body main::-webkit-scrollbar-thumb {
+  background: #ffdd03;
+  border-radius: 1px;
 }
 /*# sourceMappingURL=styles.css.map */

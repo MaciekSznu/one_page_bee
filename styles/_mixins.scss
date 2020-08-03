@@ -210,4 +210,12 @@
   &::-webkit-scrollbar {
     width: 4px;
   }
+  &::-webkit-scrollbar-track {
+    background: $add-3;
+    border-radius: 1px
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $add-4;
+    border-radius: 1px;
+  }
 }
