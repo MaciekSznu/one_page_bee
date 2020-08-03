@@ -1201,14 +1201,13 @@ template {
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  overflow-y: scroll;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
@@ -1223,5 +1222,20 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: #ffdd03;
   border-radius: 1px;
+}
+
+body main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -27,8 +27,9 @@ menuButton.addEventListener('click', (e) => {
 });
 
 // SCROLLING
-const documentSections = document.querySelectorAll('*[id^="section"], #project-01');
+const documentSections = document.querySelectorAll('*[id^="section"], #projects');
 const documentSectionsArray = [...documentSections];
+console.log(documentSections);
 
 const scrollToSection = (i) => {
   documentSectionsArray[i].scrollIntoView({
@@ -65,6 +66,17 @@ dots.forEach((item, index) => {
 
 
 // viewport
-const box = document.querySelector('#section-about');
-const rect = box.getBoundingClientRect();
-console.log(rect);
+
+const isInViewport = (el) => {
+  const rect = el.getBoundingClientRect();
+  return rect.top === 0 ? true : false;
+}
+
+const main = document.querySelector('#main');
+main.addEventListener('scroll', () => {
+  documentSections.forEach((item, index) => {
+    if (isInViewport(item, index) === true && isInViewport(item, index) !== undefined) {
+      changeActiveDot(index)
+    };
+  });
+});
