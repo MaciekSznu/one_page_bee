@@ -5,9 +5,6 @@
   @include mobile-grid;
   @include section-background;
 
-  // background-color: $add-5;
-  // background: linear-gradient(225deg, $add-3 0%, $add-4 65%, $add-5 100%);
-
   &--title {
     display: grid;
     grid-area: header;
@@ -18,6 +15,10 @@
 
     .section-title {
       @include section-title;
+
+      @media (min-width: 768px) {
+        font-size: 1.75rem;
+      }
     }
   }
 
@@ -36,12 +37,20 @@
       .section-paragraph {
         @include contact-paragraph;
 
+        @media (min-width: 768px) {
+          font-size: 1.2rem;
+        }
+
         &:first-of-type {
           margin-top: 0;
         }
 
         &--link {
           @include contact-link;
+
+          @media (min-width: 768px) {
+            font-size: 1.65rem;
+          }
         }
       }
     }

@@ -3,7 +3,7 @@
 
 .section-technologies {
   @include mobile-grid;
-  @include section-background;
+  @include alt-section-background;
 
   &--title {
     display: grid;
@@ -15,6 +15,10 @@
 
     .section-title {
       @include section-title;
+
+      @media (min-width: 768px) {
+        font-size: 1.75rem;
+      }
     }
   }
 
@@ -35,20 +39,32 @@
       &--title {
         @include section-description-title;
 
+        @media (min-width: 768px) {
+          font-size: 1.25rem;
+        }
+
         &:first-of-type {
           margin-top: 0;
+        }
+
+        @media (min-width: 768px) {
+          font-size: 1.75rem;
         }
       }
 
       .section-paragraph {
         @include section-paragraph;
         font-weight: 800;
+
+        @media (min-width: 768px) {
+          font-size: 1.25rem;
+        }
       }
 
       .technologies-icon {
         position: absolute;
         top: 10%;
-        left: 20%;
+        left: 35%;
         width: 12.5%;
         max-width: 80px;
         transform: translate(-50%, -50%);
@@ -65,92 +81,168 @@
         }
 
         &:nth-of-type(3) {
-          top: 30%;
-          left: 30%;
+          top: 25%;
+          left: 20%;
         }
 
         &:nth-of-type(4) {
-          top: 40%;
+          top: 30%;
           left: 80%;
         }
 
         &:nth-of-type(5) {
-          top: 60%;
-          left: 15%;
+          top: 70%;
+          left: 20%;
         }
 
         &:nth-of-type(6) {
-          top: 65%;
-          left: 75%;
+          top: 75%;
+          left: 80%;
         }
 
         &:nth-of-type(7) {
-          top: 80%;
-          left: 25%;
+          top: 85%;
+          left: 35%;
         }
 
         &:nth-of-type(8) {
-          top: 85%;
-          left: 70%;
+          top: 90%;
+          left: 65%;
         }
-      }
-    }
-  }
 
-  @media (min-width: 768px) {
-    &-wrapper {
-      @include section-wrapper-tablet;
+        @media (min-width: 768px) {
+          top: 20%;
+          left: 35%;
 
-      .section-title {
-        @include section-title-tablet;
-      }
+          &__image {
+            height: 70%;
+            filter: $technologies-icon-filter;
+          }
 
-      .section-description {
-        .technologies-icon {
-          margin: 1rem;
-          width: 25%;
-          max-height: 100px;
+          &:nth-of-type(2) {
+            top: 25%;
+            left: 75%;
+          }
 
-          &__description {
-            margin-top: 0.75rem;
-            font-size: 1rem;
+          &:nth-of-type(3) {
+            top: 35%;
+            left: 20%;
+          }
+
+          &:nth-of-type(4) {
+            top: 40%;
+            left: 80%;
+          }
+
+          &:nth-of-type(5) {
+            top: 60%;
+            left: 20%;
+          }
+
+          &:nth-of-type(6) {
+            top: 65%;
+            left: 80%;
+          }
+
+          &:nth-of-type(7) {
+            top: 75%;
+            left: 35%;
+          }
+
+          &:nth-of-type(8) {
+            top: 80%;
+            left: 65%;
+          }
+        }
+
+        @media (min-width: 768px) and (orientation: landscape){
+          height: 20%;
+          width: auto;
+          max-height: 80px;
+          top: 15%;
+          left: 40%;
+
+          &__image {
+            height: 70%;
+            filter: $technologies-icon-filter;
+          }
+
+          &:nth-of-type(2) {
+            top: 15%;
+            left: calc(60% - 30px);
+          }
+
+          &:nth-of-type(3) {
+            top: 30%;
+            left: 30%;
+          }
+
+          &:nth-of-type(4) {
+            top: 30%;
+            left: initial;
+            right: 25%;
+          }
+
+          &:nth-of-type(5) {
+            top: 60%;
+            left: 30%;
+          }
+
+          &:nth-of-type(6) {
+            top: 60%;
+            left: initial;
+            right: 25%;
+          }
+
+          &:nth-of-type(7) {
+            top: 85%;
+            left: 40%;
+          }
+
+          &:nth-of-type(8) {
+            top: 85%;
+            left: 60%;
+          }
+
+          @media (min-height: 900px) {
+            max-height: 120px;
           }
         }
       }
     }
   }
 
-  @media (min-width: 1280px) {
-    background-color: $add-4;
-    width: 50%;
-    height: calc(50vh + #{$mobile-header-height});
-    min-height: 450px;
-    padding-top: 0;
+  // @media (min-width: 768px) {
+  //   &--wrapper {
 
-    // &::before {
-    //   @include dots-bg;
-    //   top: 66px;
-    //   background: linear-gradient(90deg, $add-4 8px, transparent 1%) center,
-    //   linear-gradient($add-4 8px, transparent 1%) center,
-    //   #ffffff;
-    //   background-size: 10px 10px;
-    // }
+  //     .section-description {
+  //       .technologies-icon {
+  //         // margin: 1rem;
+  //         max-height: 100px;
 
-    &-wrapper {
-      @include section-wrapper-desktop;
-      background-color: $add-4;
+  //         &__description {
+  //           margin-top: 0.75rem;
+  //           font-size: 1rem;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
-      .section-title {
-        @include section-title-desktop;
-      }
+  // @media (min-width: 1280px) {
+  //   &--wrapper {
 
-      .section-description {
-        @include section-description-desktop;
+  //     // .section-title {
+  //     //   @include section-title-desktop;
+  //     // }
 
-        .section-paragraph {
-          @include section-paragraph-desktop;
-        }
-      }
-    }
-  }
+  //     .section-description {
+  //       @include section-description-desktop;
+
+  //       // .section-paragraph {
+  //       //   @include section-paragraph-desktop;
+  //       // }
+  //     }
+  //   }
+  // }
 }

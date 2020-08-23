@@ -348,17 +348,13 @@ template {
   scroll-snap-align: start;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 60px calc(100vh - 180px) 120px;
-      grid-template-rows: 60px calc(100vh - 180px) 120px;
+  -ms-grid-rows: 60px calc(100vh - 120px) 60px;
+      grid-template-rows: 60px calc(100vh - 120px) 60px;
   -ms-grid-columns: 1rem 1fr 1rem;
       grid-template-columns: 1rem 1fr 1rem;
       grid-template-areas: ". header ." ". content ." ". footer .";
   background-color: #fbc403;
-  background: linear-gradient(225deg, #fbc403 0%, #ffdd03 30%, #fbfcd4 100%);
-}
-
-.section-about:nth-of-type(odd) {
-  background: linear-gradient(135deg, #fbfcd4 0%, #ffdd03 70%, #fbc403 100%);
+  background: linear-gradient(225deg, #fbc403 0%, #ffdd03 50%, #fbfcd4 100%);
 }
 
 .section-about-wrapper {
@@ -381,6 +377,12 @@ template {
   background-size: contain;
 }
 
+@media (min-width: 768px) and (orientation: portrait) {
+  .section-about-wrapper {
+    background-size: 80%;
+  }
+}
+
 .section-about-wrapper .logo {
   width: 60px;
   height: 60px;
@@ -400,9 +402,16 @@ template {
   height: 4rem;
 }
 
+@media (min-width: 768px) {
+  .section-about-wrapper .company-wrapper {
+    height: 6rem;
+    width: 100%;
+  }
+}
+
 .section-about-wrapper .company-wrapper #animated-logo {
   width: 80%;
-  max-width: 320px;
+  max-width: 500px;
 }
 
 .section-about-wrapper .section-title {
@@ -420,23 +429,25 @@ template {
   }
 }
 
+@media (min-width: 768px) {
+  .section-about-wrapper .section-title {
+    font-size: 1.75rem;
+  }
+}
+
 .section-contact {
   height: 100vh;
   position: relative;
   scroll-snap-align: start;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 60px calc(100vh - 180px) 120px;
-      grid-template-rows: 60px calc(100vh - 180px) 120px;
+  -ms-grid-rows: 60px calc(100vh - 120px) 60px;
+      grid-template-rows: 60px calc(100vh - 120px) 60px;
   -ms-grid-columns: 1rem 1fr 1rem;
       grid-template-columns: 1rem 1fr 1rem;
       grid-template-areas: ". header ." ". content ." ". footer .";
   background-color: #fbc403;
-  background: linear-gradient(225deg, #fbc403 0%, #ffdd03 30%, #fbfcd4 100%);
-}
-
-.section-contact:nth-of-type(odd) {
-  background: linear-gradient(135deg, #fbfcd4 0%, #ffdd03 70%, #fbc403 100%);
+  background: linear-gradient(225deg, #fbc403 0%, #ffdd03 50%, #fbfcd4 100%);
 }
 
 .section-contact--title {
@@ -458,6 +469,12 @@ template {
   font-family: "Raleway", sans-serif;
   font-size: 1.15rem;
   font-weight: 900;
+}
+
+@media (min-width: 768px) {
+  .section-contact--title .section-title {
+    font-size: 1.75rem;
+  }
 }
 
 .section-contact--wrapper {
@@ -488,6 +505,12 @@ template {
   font-weight: 400;
   text-align: center;
   margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-contact--wrapper .section-description .section-paragraph {
+    font-size: 1.2rem;
+  }
 }
 
 .section-contact--wrapper .section-description .section-paragraph:first-of-type {
@@ -532,23 +555,30 @@ template {
   }
 }
 
+@media (min-width: 768px) {
+  .section-contact--wrapper .section-description .section-paragraph--link {
+    font-size: 1.65rem;
+  }
+}
+
 .section-work {
   height: 100vh;
   position: relative;
   scroll-snap-align: start;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 60px calc(100vh - 180px) 120px;
-      grid-template-rows: 60px calc(100vh - 180px) 120px;
+  -ms-grid-rows: 60px calc(100vh - 120px) 60px;
+      grid-template-rows: 60px calc(100vh - 120px) 60px;
   -ms-grid-columns: 1rem 1fr 1rem;
       grid-template-columns: 1rem 1fr 1rem;
       grid-template-areas: ". header ." ". content ." ". footer .";
   background-color: #fbc403;
-  background: linear-gradient(225deg, #fbc403 0%, #ffdd03 30%, #fbfcd4 100%);
+  background: linear-gradient(135deg, #fbfcd4 0%, #ffdd03 50%, #fbc403 100%);
 }
 
-.section-work:nth-of-type(odd) {
-  background: linear-gradient(135deg, #fbfcd4 0%, #ffdd03 70%, #fbc403 100%);
+.section-work:nth-of-type(even) {
+  background-color: #fbc403;
+  background: linear-gradient(225deg, #fbc403 0%, #ffdd03 50%, #fbfcd4 100%);
 }
 
 .section-work--title {
@@ -570,6 +600,12 @@ template {
   font-family: "Raleway", sans-serif;
   font-size: 1.15rem;
   font-weight: 900;
+}
+
+@media (min-width: 768px) {
+  .section-work--title .section-title {
+    font-size: 1.75rem;
+  }
 }
 
 .section-work-wrapper {
@@ -603,6 +639,12 @@ template {
   opacity: .7;
 }
 
+@media (min-width: 768px) and (orientation: landscape) {
+  .section-work-wrapper.work::after {
+    background-size: contain;
+  }
+}
+
 .section-work-wrapper.cooperation::after {
   content: '';
   position: absolute;
@@ -610,13 +652,17 @@ template {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./images/svg/puzzle_100_100.svg");
+  background-image: url("./images/svg/devices.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 80%;
-  opacity: .4;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  background-size: 75%;
+  opacity: .3;
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .section-work-wrapper.cooperation::after {
+    background-size: 50%;
+  }
 }
 
 .section-work-wrapper .section-description {
@@ -638,6 +684,12 @@ template {
   margin-top: 0;
 }
 
+@media (min-width: 768px) {
+  .section-work-wrapper .section-description--title {
+    font-size: 1.75rem;
+  }
+}
+
 .section-work-wrapper .section-description .section-paragraph {
   font-family: "Raleway", sans-serif;
   font-size: 1.1rem;
@@ -648,23 +700,30 @@ template {
   margin-top: .5rem;
 }
 
+@media (min-width: 768px) {
+  .section-work-wrapper .section-description .section-paragraph {
+    font-size: 1.25rem;
+  }
+}
+
 .section-projects {
   height: 100vh;
   position: relative;
   scroll-snap-align: start;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 60px calc(100vh - 180px) 120px;
-      grid-template-rows: 60px calc(100vh - 180px) 120px;
+  -ms-grid-rows: 60px calc(100vh - 120px) 60px;
+      grid-template-rows: 60px calc(100vh - 120px) 60px;
   -ms-grid-columns: 1rem 1fr 1rem;
       grid-template-columns: 1rem 1fr 1rem;
       grid-template-areas: ". header ." ". content ." ". footer .";
   background-color: #fbc403;
-  background: linear-gradient(225deg, #fbc403 0%, #ffdd03 30%, #fbfcd4 100%);
+  background: linear-gradient(135deg, #fbfcd4 0%, #ffdd03 50%, #fbc403 100%);
 }
 
-.section-projects:nth-of-type(odd) {
-  background: linear-gradient(135deg, #fbfcd4 0%, #ffdd03 70%, #fbc403 100%);
+.section-projects:nth-of-type(even) {
+  background-color: #fbc403;
+  background: linear-gradient(225deg, #fbc403 0%, #ffdd03 50%, #fbfcd4 100%);
 }
 
 .section-projects--title {
@@ -686,6 +745,12 @@ template {
   font-family: "Raleway", sans-serif;
   font-size: 1.15rem;
   font-weight: 900;
+}
+
+@media (min-width: 768px) {
+  .section-projects--title .section-title {
+    font-size: 1.75rem;
+  }
 }
 
 .section-projects .project-wrapper {
@@ -719,6 +784,12 @@ template {
   letter-spacing: .1rem;
 }
 
+@media (min-width: 768px) {
+  .section-projects .project-wrapper .project-description--title {
+    font-size: 1.75rem;
+  }
+}
+
 .section-projects .project-wrapper .project-description--paragraph {
   font-family: "Raleway", sans-serif;
   font-size: 1.1rem;
@@ -730,6 +801,12 @@ template {
 .section-projects .project-wrapper .project-description--paragraph:not(:first-of-type) {
   margin: 0.4rem 0;
   text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .section-projects .project-wrapper .project-description--paragraph {
+    font-size: 1.25rem;
+  }
 }
 
 .section-projects .project-wrapper .project-description--link {
@@ -785,24 +862,10 @@ template {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     padding: 1rem 0 2rem;
-    min-height: 50vh;
-  }
-  .section-projects-wrapper .section-title {
-    margin: 0;
-    padding: 1rem 1.5rem 1rem 4rem;
-    font-family: "Raleway", sans-serif;
-    font-size: 1.5rem;
   }
 }
 
 @media (min-width: 1280px) {
-  .section-projects {
-    width: 50%;
-    background-color: #fbc403;
-    height: calc(50vh + 60px);
-    min-height: 450px;
-    padding-top: 0;
-  }
   .section-projects-wrapper {
     height: 100%;
     width: 100%;
@@ -816,22 +879,6 @@ template {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    background-color: #fbc403;
-  }
-  .section-projects-wrapper .section-title {
-    margin: 0;
-    padding-top: 1rem;
-    font-family: "Raleway", sans-serif;
-    font-size: 2rem;
-    min-height: 15%;
-  }
-  .section-projects-wrapper .section-description {
-    min-height: 60%;
-    padding-right: 4rem;
-  }
-  .section-projects-wrapper .section-description .section-paragraph {
-    font-family: "Raleway", sans-serif;
-    font-size: 1.2rem;
   }
 }
 
@@ -841,17 +888,13 @@ template {
   scroll-snap-align: start;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 60px calc(100vh - 180px) 120px;
-      grid-template-rows: 60px calc(100vh - 180px) 120px;
+  -ms-grid-rows: 60px calc(100vh - 120px) 60px;
+      grid-template-rows: 60px calc(100vh - 120px) 60px;
   -ms-grid-columns: 1rem 1fr 1rem;
       grid-template-columns: 1rem 1fr 1rem;
       grid-template-areas: ". header ." ". content ." ". footer .";
   background-color: #fbc403;
-  background: linear-gradient(225deg, #fbc403 0%, #ffdd03 30%, #fbfcd4 100%);
-}
-
-.section-technologies:nth-of-type(odd) {
-  background: linear-gradient(135deg, #fbfcd4 0%, #ffdd03 70%, #fbc403 100%);
+  background: linear-gradient(135deg, #fbfcd4 0%, #ffdd03 50%, #fbc403 100%);
 }
 
 .section-technologies--title {
@@ -873,6 +916,12 @@ template {
   font-family: "Raleway", sans-serif;
   font-size: 1.15rem;
   font-weight: 900;
+}
+
+@media (min-width: 768px) {
+  .section-technologies--title .section-title {
+    font-size: 1.75rem;
+  }
 }
 
 .section-technologies--wrapper {
@@ -908,8 +957,20 @@ template {
   letter-spacing: .1rem;
 }
 
+@media (min-width: 768px) {
+  .section-technologies--wrapper .section-description--title {
+    font-size: 1.25rem;
+  }
+}
+
 .section-technologies--wrapper .section-description--title:first-of-type {
   margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .section-technologies--wrapper .section-description--title {
+    font-size: 1.75rem;
+  }
 }
 
 .section-technologies--wrapper .section-description .section-paragraph {
@@ -921,10 +982,16 @@ template {
   font-weight: 800;
 }
 
+@media (min-width: 768px) {
+  .section-technologies--wrapper .section-description .section-paragraph {
+    font-size: 1.25rem;
+  }
+}
+
 .section-technologies--wrapper .section-description .technologies-icon {
   position: absolute;
   top: 10%;
-  left: 20%;
+  left: 35%;
   width: 12.5%;
   max-width: 80px;
   -webkit-transform: translate(-50%, -50%);
@@ -944,105 +1011,123 @@ template {
 }
 
 .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(3) {
-  top: 30%;
-  left: 30%;
+  top: 25%;
+  left: 20%;
 }
 
 .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(4) {
-  top: 40%;
+  top: 30%;
   left: 80%;
 }
 
 .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(5) {
-  top: 60%;
-  left: 15%;
+  top: 70%;
+  left: 20%;
 }
 
 .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(6) {
-  top: 65%;
-  left: 75%;
+  top: 75%;
+  left: 80%;
 }
 
 .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(7) {
-  top: 80%;
-  left: 25%;
+  top: 85%;
+  left: 35%;
 }
 
 .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(8) {
-  top: 85%;
-  left: 70%;
+  top: 90%;
+  left: 65%;
 }
 
 @media (min-width: 768px) {
-  .section-technologies-wrapper {
-    height: auto;
-    min-height: 25vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    padding: 1rem 0 2rem;
+  .section-technologies--wrapper .section-description .technologies-icon {
+    top: 20%;
+    left: 35%;
   }
-  .section-technologies-wrapper .section-title {
-    margin: 0;
-    padding: 1rem 1.5rem 1rem 4rem;
-    font-family: "Raleway", sans-serif;
-    font-size: 1.5rem;
+  .section-technologies--wrapper .section-description .technologies-icon__image {
+    height: 70%;
+    -webkit-filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(11deg) brightness(102%) contrast(100%);
+            filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(11deg) brightness(102%) contrast(100%);
   }
-  .section-technologies-wrapper .section-description .technologies-icon {
-    margin: 1rem;
-    width: 25%;
-    max-height: 100px;
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(2) {
+    top: 25%;
+    left: 75%;
   }
-  .section-technologies-wrapper .section-description .technologies-icon__description {
-    margin-top: 0.75rem;
-    font-size: 1rem;
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(3) {
+    top: 35%;
+    left: 20%;
+  }
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(4) {
+    top: 40%;
+    left: 80%;
+  }
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(5) {
+    top: 60%;
+    left: 20%;
+  }
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(6) {
+    top: 65%;
+    left: 80%;
+  }
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(7) {
+    top: 75%;
+    left: 35%;
+  }
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(8) {
+    top: 80%;
+    left: 65%;
   }
 }
 
-@media (min-width: 1280px) {
-  .section-technologies {
-    background-color: #ffdd03;
-    width: 50%;
-    height: calc(50vh + 60px);
-    min-height: 450px;
-    padding-top: 0;
+@media (min-width: 768px) and (orientation: landscape) {
+  .section-technologies--wrapper .section-description .technologies-icon {
+    height: 20%;
+    width: auto;
+    max-height: 80px;
+    top: 15%;
+    left: 40%;
   }
-  .section-technologies-wrapper {
-    height: 100%;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    background-color: #ffdd03;
+  .section-technologies--wrapper .section-description .technologies-icon__image {
+    height: 70%;
+    -webkit-filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(11deg) brightness(102%) contrast(100%);
+            filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(11deg) brightness(102%) contrast(100%);
   }
-  .section-technologies-wrapper .section-title {
-    margin: 0;
-    padding-top: 1rem;
-    font-family: "Raleway", sans-serif;
-    font-size: 2rem;
-    min-height: 15%;
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(2) {
+    top: 15%;
+    left: calc(60% - 30px);
   }
-  .section-technologies-wrapper .section-description {
-    min-height: 60%;
-    padding-right: 4rem;
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(3) {
+    top: 30%;
+    left: 30%;
   }
-  .section-technologies-wrapper .section-description .section-paragraph {
-    font-family: "Raleway", sans-serif;
-    font-size: 1.2rem;
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(4) {
+    top: 30%;
+    left: initial;
+    right: 25%;
+  }
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(5) {
+    top: 60%;
+    left: 30%;
+  }
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(6) {
+    top: 60%;
+    left: initial;
+    right: 25%;
+  }
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(7) {
+    top: 85%;
+    left: 40%;
+  }
+  .section-technologies--wrapper .section-description .technologies-icon:nth-of-type(8) {
+    top: 85%;
+    left: 60%;
+  }
+}
+
+@media (min-width: 768px) and (orientation: landscape) and (min-height: 900px) {
+  .section-technologies--wrapper .section-description .technologies-icon {
+    max-height: 120px;
   }
 }
 
@@ -1119,7 +1204,6 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 60px;
 }
 
 .menu-dots-wrapper .menu-dots a {
@@ -1150,8 +1234,8 @@ template {
   scroll-snap-align: start;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 60px calc(100vh - 180px) 120px;
-      grid-template-rows: 60px calc(100vh - 180px) 120px;
+  -ms-grid-rows: 60px calc(100vh - 120px) 60px;
+      grid-template-rows: 60px calc(100vh - 120px) 60px;
   -ms-grid-columns: 1rem 1fr 1rem;
       grid-template-columns: 1rem 1fr 1rem;
       grid-template-areas: ". header ." ". content ." ". footer .";
@@ -1206,7 +1290,7 @@ template {
 
 #turn {
   background-color: #fbc403;
-  background: linear-gradient(225deg, #fbc403 0%, #ffdd03 30%, #fbfcd4 100%);
+  background: linear-gradient(225deg, #fbc403 0%, #ffdd03 50%, #fbfcd4 100%);
   position: absolute;
   top: 0;
   left: 0;
@@ -1221,10 +1305,6 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-#turn:nth-of-type(odd) {
-  background: linear-gradient(135deg, #fbfcd4 0%, #ffdd03 70%, #fbc403 100%);
 }
 
 #turn .turn-information {

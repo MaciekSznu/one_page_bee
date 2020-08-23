@@ -3,8 +3,12 @@
 
 .section-projects {
   @include mobile-grid;
-  @include section-background;
+  @include alt-section-background;
 
+  &:nth-of-type(even) {
+    @include section-background;
+  }
+  
   &--title {
     display: grid;
     grid-area: header;
@@ -15,6 +19,10 @@
 
     .section-title {
       @include section-title;
+
+      @media (min-width: 768px) {
+        font-size: 1.75rem;
+      }
     }
   }
 
@@ -32,6 +40,9 @@
 
       &--title {
         @include project-description-title;
+        @media (min-width: 768px) {
+          font-size: 1.75rem;
+        }
       }
 
       &--paragraph {
@@ -40,6 +51,10 @@
         &:not(:first-of-type) {
           margin: 0.4rem 0;
           text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+          font-size: 1.25rem;
         }
       }
 
@@ -52,45 +67,27 @@
   @media (min-width: 768px) {
     &-wrapper {
       @include section-wrapper-tablet;
-      min-height: 50vh;
-
-      .section-title {
-        @include section-title-tablet;
-      }
+      // .section-title {
+      //   @include section-title-tablet;
+      // }
     }
   }
 
   @media (min-width: 1280px) {
-    width: 50%;
-    background-color: $add-5;
-    height: calc(50vh + #{$mobile-header-height});
-    min-height: 450px;
-    padding-top: 0;
-
-    // &::before {
-    //   @include dots-bg;
-    //   top: 66px;
-    //   background: linear-gradient(90deg, $add-5 8px, transparent 1%) center,
-    //   linear-gradient($add-5 8px, transparent 1%) center,
-    //   #ffffff;
-    //   background-size: 10px 10px;
-    // }
-
     &-wrapper {
       @include section-wrapper-desktop;
-      background-color: $add-5;
 
-      .section-title {
-        @include section-title-desktop;
-      }
+      // .section-title {
+      //   @include section-title-desktop;
+      // }
 
-      .section-description {
-        @include section-description-desktop;
+      // .section-description {
+      //   @include section-description-desktop;
 
-        .section-paragraph {
-          @include section-paragraph-desktop;
-        }
-      }
+      //   .section-paragraph {
+      //     @include section-paragraph-desktop;
+      //   }
+      // }
     }
   }
 }

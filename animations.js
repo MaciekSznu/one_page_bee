@@ -28,15 +28,22 @@ loadedPaths();
 
 const techIconsTl = anime.timeline({
   targets: '.technologies-icon',
-  delay: anime.stagger(500),
-  duration: 750,
+  delay: anime.stagger(750),
+  duration: 1000,
   easing: 'easeOutExpo',
   // direction: 'alternate',
   loop: true
 });
 
 // !!! uncomment for animation works !!!
+
 // techIconsTl.add({
+//   opacity: 0,
+// }).
+// add({
+//   opacity: 1,
+// }).
+// add({
 //   opacity: 0,
 // }).
 // add({

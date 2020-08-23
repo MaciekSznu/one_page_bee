@@ -18,6 +18,10 @@
     background-repeat: no-repeat;
     background-size: contain;
 
+    @media (min-width: 768px) and (orientation: portrait) {
+      background-size: 80%;
+    }
+
     .logo {
       width: 60px;
       height: 60px;
@@ -33,9 +37,14 @@
       align-items: center;
       height: 4rem;
 
+      @media (min-width: 768px) {
+        height: 6rem;
+        width: 100%;
+      }
+
       #animated-logo {
         width: 80%;
-        max-width: 320px;
+        max-width: 500px;
       }
     }
 
@@ -46,6 +55,10 @@
 
       @media (min-width: 375px) {
         font-size: 1.25rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1.75rem;
       }
     }
   }
