@@ -435,6 +435,10 @@ template {
   }
 }
 
+.section-about-wrapper .section-title span {
+  display: none;
+}
+
 .section-contact {
   height: 100vh;
   position: relative;
@@ -558,6 +562,37 @@ template {
 @media (min-width: 768px) {
   .section-contact--wrapper .section-description .section-paragraph--link {
     font-size: 1.65rem;
+  }
+}
+
+.section-contact--footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: footer;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.section-contact--footer .copyright {
+  font-family: "Raleway", sans-serif;
+  font-size: .9rem;
+  margin: 0;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-top: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .section-contact--footer .copyright {
+    font-size: 1.2rem;
   }
 }
 

@@ -55,4 +55,24 @@
       }
     }
   }
+
+  &--footer {
+    display: grid;
+    grid-area: footer;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+
+    .copyright {
+      @include contact-paragraph;
+      margin-top: 0;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @media (min-width: 768px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
 }
