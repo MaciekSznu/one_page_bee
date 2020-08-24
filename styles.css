@@ -1378,7 +1378,6 @@ html {
 body {
   width: 100vw;
   max-width: 100vw;
-  height: 100vh;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -1427,6 +1426,7 @@ body main {
   width: 100vw;
   height: 100vh;
   max-width: 100vw;
+  overflow: visible;
   overflow-x: hidden;
   overflow-y: scroll;
   -ms-scroll-snap-type: y mandatory;
@@ -1446,5 +1446,101 @@ body main::-webkit-scrollbar-track {
 body main::-webkit-scrollbar-thumb {
   background: #ffdd03;
   border-radius: 1px;
+}
+
+body main section {
+  height: 100vh;
+}
+
+body main section div:nth-child(2) div h3 {
+  opacity: 0;
+}
+
+body main section.is-visible div:nth-child(2) div h3 {
+  opacity: 1;
+}
+
+body main section.is-visible div:nth-child(2) div h3:nth-of-type(1) {
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+}
+
+body main section.is-visible div:nth-child(2) div h3:nth-of-type(1).project-description--title {
+  -webkit-transition: opacity 1.5s;
+  transition: opacity 1.5s;
+}
+
+body main section.is-visible div:nth-child(2) div h3:nth-of-type(2) {
+  opacity: 1;
+  -webkit-transition: opacity 2s 4s;
+  transition: opacity 2s 4s;
+}
+
+body main section.is-visible div:nth-child(2) div h3:nth-of-type(3) {
+  -webkit-transition: opacity 2s 8s;
+  transition: opacity 2s 8s;
+}
+
+body main section.is-visible div:nth-child(2) div h3:nth-of-type(4) {
+  -webkit-transition: opacity 2s 12s;
+  transition: opacity 2s 12s;
+}
+
+body main section div:nth-child(2) div .first, body main section div:nth-child(2) div .second, body main section div:nth-child(2) div .third, body main section div:nth-child(2) div .fourth, body main section div:nth-child(2) div .project-description--link, body main section div:nth-child(2) div .section-paragraph--link {
+  opacity: 0;
+}
+
+body main section.is-visible div:nth-child(2) div .first, body main section.is-visible div:nth-child(2) div .second, body main section.is-visible div:nth-child(2) div .third, body main section.is-visible div:nth-child(2) div .fourth, body main section.is-visible div:nth-child(2) div .project-description--link, body main section.is-visible div:nth-child(2) div .section-paragraph--link {
+  opacity: 1;
+}
+
+body main section.is-visible div:nth-child(2) div .first {
+  -webkit-transition: opacity 2s 2s;
+  transition: opacity 2s 2s;
+}
+
+body main section.is-visible div:nth-child(2) div .second {
+  -webkit-transition: opacity 2s 6s;
+  transition: opacity 2s 6s;
+}
+
+body main section.is-visible div:nth-child(2) div .third {
+  -webkit-transition: opacity 2s 10s;
+  transition: opacity 2s 10s;
+}
+
+body main section.is-visible div:nth-child(2) div .fourth {
+  -webkit-transition: opacity 2s 14s;
+  transition: opacity 2s 14s;
+}
+
+body main section.is-visible div:nth-child(2) div .section-paragraph--link {
+  -webkit-transition: opacity 2s 4s;
+  transition: opacity 2s 4s;
+}
+
+body main section.is-visible div:nth-child(2) div .first.project-description--paragraph {
+  -webkit-transition: opacity 1.5s 1s;
+  transition: opacity 1.5s 1s;
+}
+
+body main section.is-visible div:nth-child(2) div .second.project-description--paragraph {
+  -webkit-transition: opacity 1.5s 2s;
+  transition: opacity 1.5s 2s;
+}
+
+body main section.is-visible div:nth-child(2) div .third.project-description--paragraph {
+  -webkit-transition: opacity 1.5s 3s;
+  transition: opacity 1.5s 3s;
+}
+
+body main section.is-visible div:nth-child(2) div .fourth.project-description--paragraph {
+  -webkit-transition: opacity 1.5s 4s;
+  transition: opacity 1.5s 4s;
+}
+
+body main section.is-visible div:nth-child(2) div .project-description--link {
+  -webkit-transition: opacity 1.5s 5s;
+  transition: opacity 1.5s 5s;
 }
 /*# sourceMappingURL=styles.css.map */

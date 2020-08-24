@@ -1,7 +1,7 @@
 /* LOGO ANIMATION */
 let elements = [];
 
-const loadedPaths = () => window.addEventListener("load", function() {
+const loadedPaths = () => window.addEventListener("load", function () {
   const animatedLogo = document.getElementById('animated-logo').contentDocument.querySelectorAll('path');
   const elements = [...animatedLogo];
 
@@ -26,6 +26,7 @@ const loadedPaths = () => window.addEventListener("load", function() {
 
 loadedPaths();
 
+/* TECH ICONS ANIMATION */
 const techIconsTl = anime.timeline({
   targets: '.technologies-icon',
   delay: anime.stagger(750),
@@ -50,3 +51,52 @@ const techIconsTl = anime.timeline({
 //   opacity: 1,
 // });
 
+/* SCROLL ANIMATION */
+// function isElementInViewport (el) {
+
+//   var rect = el.getBoundingClientRect();
+
+//   return (
+//       rect.top >= 0 &&
+//       rect.left >= 0 &&
+//       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+//       rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+//   );
+// }
+
+// function onVisibilityChange(el, callback) {
+//   var old_visible;
+//   return function () {
+//       var visible = isElementInViewport(el);
+//       if (visible != old_visible) {
+//           old_visible = visible;
+//           if (typeof callback == 'function') {
+//               callback();
+//           }
+//       }
+//   }
+// }
+
+// var handler = onVisibilityChange(el, function() {
+//   /* Your code go here */
+// });
+
+const sections = [...document.querySelectorAll('section')];
+
+const options = {
+  rootMargin: '0px',
+  threshold: .25,
+};
+
+const callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    const { target } = entry;
+    entry.intersectionRatio >= .25 ? target.classList.add('is-visible') : target.classList.remove('is-visible');
+  });
+};
+
+const observer = new IntersectionObserver(callback, options);
+
+sections.forEach((section, index) => {
+  observer.observe(section)
+});
