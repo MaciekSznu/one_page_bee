@@ -15,13 +15,6 @@ const loadedPaths = () => window.addEventListener("load", function () {
     direction: 'alternate',
     loop: false
   });
-  // anime({
-  //   targets: elements,
-  //   fill: ['rgba(255,255,255,0)', '#ffffff'],
-  //   delay: 2000,
-  //   duration: 1500,
-  //   easing: 'linear'
-  // });
 });
 
 loadedPaths();
@@ -52,34 +45,6 @@ const techIconsTl = anime.timeline({
 // });
 
 /* SCROLL ANIMATION */
-// function isElementInViewport (el) {
-
-//   var rect = el.getBoundingClientRect();
-
-//   return (
-//       rect.top >= 0 &&
-//       rect.left >= 0 &&
-//       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
-//       rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
-//   );
-// }
-
-// function onVisibilityChange(el, callback) {
-//   var old_visible;
-//   return function () {
-//       var visible = isElementInViewport(el);
-//       if (visible != old_visible) {
-//           old_visible = visible;
-//           if (typeof callback == 'function') {
-//               callback();
-//           }
-//       }
-//   }
-// }
-
-// var handler = onVisibilityChange(el, function() {
-//   /* Your code go here */
-// });
 
 const sections = [...document.querySelectorAll('section')];
 
