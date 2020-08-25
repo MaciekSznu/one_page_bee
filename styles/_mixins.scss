@@ -3,6 +3,7 @@
   font-family: $text-base-font;
   font-size: 1.15rem;
   font-weight: 900;
+  color: $base-dark-color;
 }
 
 @mixin section-description-mobile {
@@ -36,6 +37,7 @@
   margin: 1rem 0;
   font-weight: 500;
   text-align: center;
+  color: $base-dark-color;
 }
 
 @mixin project-description-paragraph {
@@ -44,6 +46,7 @@
   margin: .75rem 1rem;
   font-weight: 700;
   text-align: center;
+  color: $base-dark-color;
 }
 
 @mixin section-link {
@@ -87,6 +90,7 @@
   font-weight: 400;
   text-align: center;
   margin-top: 1.5rem;
+  color: $base-dark-color;
 }
 
 @mixin contact-link {

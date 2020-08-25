@@ -1,7 +1,7 @@
 /* LOGO ANIMATION */
 let elements = [];
 
-const loadedPaths = () => window.addEventListener("load", function() {
+const loadedPaths = () => window.addEventListener("load", function () {
   const animatedLogo = document.getElementById('animated-logo').contentDocument.querySelectorAll('path');
   const elements = [...animatedLogo];
 
@@ -15,17 +15,11 @@ const loadedPaths = () => window.addEventListener("load", function() {
     direction: 'alternate',
     loop: false
   });
-  // anime({
-  //   targets: elements,
-  //   fill: ['rgba(255,255,255,0)', '#ffffff'],
-  //   delay: 2000,
-  //   duration: 1500,
-  //   easing: 'linear'
-  // });
 });
 
 loadedPaths();
 
+/* TECH ICONS ANIMATION */
 const techIconsTl = anime.timeline({
   targets: '.technologies-icon',
   delay: anime.stagger(750),
@@ -50,3 +44,24 @@ const techIconsTl = anime.timeline({
 //   opacity: 1,
 // });
 
+/* SCROLL ANIMATION */
+
+const sections = [...document.querySelectorAll('section')];
+
+const options = {
+  rootMargin: '0px',
+  threshold: .25,
+};
+
+const callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    const { target } = entry;
+    entry.intersectionRatio >= .25 ? target.classList.add('is-visible') : target.classList.remove('is-visible');
+  });
+};
+
+const observer = new IntersectionObserver(callback, options);
+
+sections.forEach((section, index) => {
+  observer.observe(section)
+});
