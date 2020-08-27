@@ -66,4 +66,7 @@
       }
     }
   }
+  .footer {
+    @include footer;
+  }
 }

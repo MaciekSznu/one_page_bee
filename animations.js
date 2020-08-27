@@ -56,7 +56,7 @@ const options = {
 const callback = (entries, observer) => {
   entries.forEach((entry) => {
     const { target } = entry;
-    entry.intersectionRatio >= .25 ? target.classList.add('is-visible') : target.classList.remove('is-visible');
+    entry.intersectionRatio >= options.threshold ? target.classList.add('is-visible') : null;
   });
 };
 
