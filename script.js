@@ -29,7 +29,6 @@ menuButton.addEventListener('click', (e) => {
 // SCROLLING
 const documentSections = document.querySelectorAll('*[id^="section"], #projects');
 const documentSectionsArray = [...documentSections];
-console.log(documentSections);
 
 const scrollToSection = (i) => {
   documentSectionsArray[i].scrollIntoView({

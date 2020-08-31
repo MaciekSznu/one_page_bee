@@ -63,8 +63,8 @@
 
       .technologies-icon {
         position: absolute;
-        top: 10%;
-        left: 35%;
+        top: 17.5%;
+        left: 15%;
         width: 12.5%;
         max-width: 80px;
         transform: translate(-50%, -50%);
@@ -75,119 +75,40 @@
         }
 
         &:nth-of-type(2) {
-          top: 15%;
-          left: 75%;
+          top: 17.5%;
+          left: 37.5%;
         }
         &:nth-of-type(3) {
-          top: 30%;
-          left: 80%;
+          top: 17.5%;
+          left: 60%;
         }
         &:nth-of-type(4) {
-          top: 75%;
-          left: 80%;
+          top: 17.5%;
+          left: 82.5%;
         }
         &:nth-of-type(5) {
-          top: 85%;
-          left: 65%;
+          top: 80%;
+          left: 15%;
         }
         &:nth-of-type(6) {
           top: 80%;
-          left: 35%;
+          left: 37.5%;
         }
         &:nth-of-type(7) {
-          top: 70%;
-          left: 20%;
+          top: 80%;
+          left: 60%;
         }
         &:nth-of-type(8) {
-          top: 25%;
-          left: 20%;
+          top: 80%;
+          left: 82.5%;
         }
 
         @media (min-width: 768px) {
-          top: 20%;
-          left: 35%;
           max-height: 80px;
           max-width: 60px;
 
           &__image {
             height: 70%;
-          }
-
-          &:nth-of-type(2) {
-            top: 25%;
-            left: 75%;
-          }
-          &:nth-of-type(3) {
-            top: 40%;
-            left: 80%;
-          }
-          &:nth-of-type(4) {
-            top: 65%;
-            left: 80%;
-          }
-          &:nth-of-type(5) {
-            top: 80%;
-            left: 65%;
-          }
-          &:nth-of-type(6) {
-            top: 75%;
-            left: 35%;
-          }
-          &:nth-of-type(7) {
-            top: 60%;
-            left: 20%;
-          }
-          &:nth-of-type(8) {
-            top: 35%;
-            left: 20%;
-          }
-        }
-
-        @media (min-width: 768px) and (orientation: landscape) {
-          height: 20%;
-          width: auto;
-          max-height: 80px;
-          top: 15%;
-          left: 40%;
-
-          &__image {
-            height: 70%;
-            filter: $technologies-icon-filter;
-          }
-
-          &:nth-of-type(2) {
-            top: 15%;
-            left: calc(60% - 30px);
-          }
-          &:nth-of-type(3) {
-            top: 30%;
-            left: initial;
-            right: 25%;
-          }
-          &:nth-of-type(4) {
-            top: 60%;
-            left: initial;
-            right: 25%;
-          }
-          &:nth-of-type(5) {
-            top: 85%;
-            left: 60%;
-          }
-          &:nth-of-type(6) {
-            top: 85%;
-            left: 40%;
-          }
-          &:nth-of-type(7) {
-            top: 60%;
-            left: 30%;
-          }
-          &:nth-of-type(8) {
-            top: 30%;
-            left: 30%;
-          }
-
-          @media (min-height: 900px) {
-            max-height: 100px;
           }
         }
       }
