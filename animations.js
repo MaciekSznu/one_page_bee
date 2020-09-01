@@ -31,18 +31,18 @@ const techIconsTl = anime.timeline({
 
 // !!! uncomment for animation works !!!
 
-// techIconsTl.add({
-//   opacity: 0,
-// }).
-// add({
-//   opacity: 1,
-// }).
-// add({
-//   opacity: 0,
-// }).
-// add({
-//   opacity: 1,
-// });
+techIconsTl.add({
+  opacity: 0,
+}).
+add({
+  opacity: 1,
+}).
+add({
+  opacity: 0,
+}).
+add({
+  opacity: 1,
+});
 
 /* SCROLL ANIMATION */
 

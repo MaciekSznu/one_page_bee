@@ -111,6 +111,50 @@
             height: 70%;
           }
         }
+
+        @media (min-width: 1024px) {
+          top: 17.5%;
+          left: 19%;
+          max-height: 80px;
+          max-width: 60px;
+
+          &__image {
+            height: 70%;
+          }
+
+          &:nth-of-type(2) {
+            top: 17.5%;
+            left: 35.5%;
+          }
+          &:nth-of-type(3) {
+            left: initial;
+            top: 17.5%;
+            right: calc(35.5% - 60px);
+          }
+          &:nth-of-type(4) {
+            left: initial;
+            top: 17.5%;
+            right: calc(19% - 60px);
+          }
+          &:nth-of-type(5) {
+            top: 80%;
+            left: 19%;
+          }
+          &:nth-of-type(6) {
+            top: 80%;
+            left: 35.5%;
+          }
+          &:nth-of-type(7) {
+            top: 80%;
+            left: initial;
+            right: calc(35.5% - 60px);
+          }
+          &:nth-of-type(8) {
+            top: 80%;
+            left: initial;
+            right: calc(19% - 60px);
+          }
+        }
       }
     }
   }
