@@ -11,7 +11,6 @@ const loadedPaths = () => window.addEventListener("load", function () {
     easing: 'easeInOutCubic',
     duration: 2000,
     delay: 200,
-    // delay: function(el, i) { return i * 250 },
     direction: 'alternate',
     loop: false
   });
@@ -25,11 +24,9 @@ const techIconsTl = anime.timeline({
   delay: anime.stagger(750),
   duration: 1000,
   easing: 'easeOutExpo',
-  // direction: 'alternate',
   loop: true
 });
 
-// !!! uncomment for animation works !!!
 
 techIconsTl.add({
   opacity: 0,
@@ -55,7 +52,9 @@ const options = {
 
 const callback = (entries, observer) => {
   entries.forEach((entry) => {
-    const { target } = entry;
+    const {
+      target
+    } = entry;
     entry.intersectionRatio >= options.threshold ? target.classList.add('is-visible') : null;
   });
 };

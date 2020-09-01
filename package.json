@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "minify_css": "minify styles.css > ./dist/styles.css",
     "minify_js": "minify script.js animations.js > ./dist/script.js",
-    "gzip_html": "gzipper compress index.html ./dist",
-    "build_dist": "npm-run-all -p minify_css minify_js gzip_html"
+    "minify_html": "minify index.html > ./dist/index.html",
+    "build_dist": "npm-run-all -p minify_css minify_js minify_html"
   },
   "repository": {
     "type": "git",

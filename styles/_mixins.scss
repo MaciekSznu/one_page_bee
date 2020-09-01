@@ -104,7 +104,7 @@
   margin: 0;
 
   &:hover {
-    mask-image: linear-gradient(-75deg, rgba(#fff, 1) 30%, rgba($add-4, 0.5) 50%, rgba(#fff, 1) 70%);
+    mask-image: linear-gradient(-75deg, rgba(#fff, 1) 30%, rgba($base-yellow, 0.5) 50%, rgba(#fff, 1) 70%);
     mask-size: 275%;
     animation: shine 1.25s;
   }
@@ -129,22 +129,6 @@
   padding: 1rem 0 2rem;
 }
 
-@mixin section-title-tablet {
-  margin: 0;
-  padding: 1rem 1.5rem 1rem 4rem;
-  font-family: $text-base-font;
-  font-size: 1.5rem;
-}
-
-@mixin section-description-tablet {
-  padding: 0.5rem 4rem;
-}
-
-@mixin section-paragraph-tablet {
-  font-family: $text-base-font;
-  font-size: 1.2rem;
-}
-
 @mixin section-wrapper-desktop {
   height: 100%;
   width: 100%;
@@ -153,26 +137,7 @@
   justify-content: space-evenly;
 }
 
-@mixin section-title-desktop {
-  margin: 0;
-  padding-top: 1rem;
-  font-family: $text-base-font;
-  font-size: 2rem;
-  min-height: 15%;
-}
-
-@mixin section-description-desktop {
-  min-height: 60%;
-
-  padding-right: 4rem;
-}
-
-@mixin section-paragraph-desktop {
-  font-family: $text-base-font;
-  font-size: 1.2rem;
-}
-
-@mixin mobile-grid {
+@mixin main-grid {
   height: 100vh;
   position: relative;
   scroll-snap-align: start;
@@ -186,8 +151,8 @@
 }
 
 @mixin section-background {
-  background-color: $add-5;
-  background: linear-gradient(225deg, $add-5 0%, $add-4 50%, $add-3 100%);
+  background-color: $dark-yellow;
+  background: linear-gradient(225deg, $dark-yellow 0%, $base-yellow 50%, $light-yellow 100%);
 
   &:after {
     position: absolute;
@@ -195,10 +160,10 @@
     left: 44px;
     width: 25px;
     height: 50px;
-    content: '';
-    background-image: url('./images/svg/dots_9px_9px_3_3.svg');
+    content: "";
+    background-image: url("./images/svg/dots_9px_9px_3_3.svg");
     background-size: 100%;
-    opacity: .75;
+    opacity: 0.75;
 
     @media (min-width: 768px) {
       top: 60px;
@@ -219,8 +184,8 @@
 }
 
 @mixin alt-section-background {
-  background-color: $add-5;
-  background: linear-gradient(135deg, $add-3 0%, $add-4 50%, $add-5 100%);
+  background-color: $dark-yellow;
+  background: linear-gradient(135deg, $light-yellow 0%, $base-yellow 50%, $dark-yellow 100%);
 
   &:after {
     position: absolute;
@@ -228,10 +193,10 @@
     right: 44px;
     width: 25px;
     height: 50px;
-    content: '';
-    background-image: url('./images/svg/dots_9px_9px_3_3.svg');
+    content: "";
+    background-image: url("./images/svg/dots_9px_9px_3_3.svg");
     background-size: 100%;
-    opacity: .75;
+    opacity: 0.75;
 
     @media (min-width: 768px) {
       bottom: 60px;
@@ -252,8 +217,8 @@
 }
 
 @mixin menu-background {
-  background-color: $add-5;
-  background: radial-gradient(circle at center right, $add-5 0%, $add-4 60%, $add-3 100%);
+  background-color: $dark-yellow;
+  background: radial-gradient(circle at center right, $dark-yellow 0%, $base-yellow 60%, $light-yellow 100%);
 }
 
 @mixin main-scrollbar {
@@ -261,11 +226,11 @@
     width: 4px;
   }
   &::-webkit-scrollbar-track {
-    background: $add-3;
+    background: $light-yellow;
     border-radius: 1px;
   }
   &::-webkit-scrollbar-thumb {
-    background: $add-4;
+    background: $base-yellow;
     border-radius: 1px;
   }
 }

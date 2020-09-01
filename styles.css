@@ -363,10 +363,10 @@ template {
   left: 44px;
   width: 25px;
   height: 50px;
-  content: '';
+  content: "";
   background-image: url("./images/svg/dots_9px_9px_3_3.svg");
   background-size: 100%;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 @media (min-width: 768px) {
@@ -525,10 +525,10 @@ template {
   left: 44px;
   width: 25px;
   height: 50px;
-  content: '';
+  content: "";
   background-image: url("./images/svg/dots_9px_9px_3_3.svg");
   background-size: 100%;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 @media (min-width: 768px) {
@@ -717,10 +717,10 @@ template {
   right: 44px;
   width: 25px;
   height: 50px;
-  content: '';
+  content: "";
   background-image: url("./images/svg/dots_9px_9px_3_3.svg");
   background-size: 100%;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 @media (min-width: 768px) {
@@ -754,10 +754,10 @@ template {
   left: 44px;
   width: 25px;
   height: 50px;
-  content: '';
+  content: "";
   background-image: url("./images/svg/dots_9px_9px_3_3.svg");
   background-size: 100%;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 @media (min-width: 768px) {
@@ -940,10 +940,10 @@ template {
   right: 44px;
   width: 25px;
   height: 50px;
-  content: '';
+  content: "";
   background-image: url("./images/svg/dots_9px_9px_3_3.svg");
   background-size: 100%;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 @media (min-width: 768px) {
@@ -977,10 +977,10 @@ template {
   left: 44px;
   width: 25px;
   height: 50px;
-  content: '';
+  content: "";
   background-image: url("./images/svg/dots_9px_9px_3_3.svg");
   background-size: 100%;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 @media (min-width: 768px) {
@@ -1214,10 +1214,10 @@ template {
   right: 44px;
   width: 25px;
   height: 50px;
-  content: '';
+  content: "";
   background-image: url("./images/svg/dots_9px_9px_3_3.svg");
   background-size: 100%;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 @media (min-width: 768px) {
@@ -1653,10 +1653,10 @@ template {
   left: 44px;
   width: 25px;
   height: 50px;
-  content: '';
+  content: "";
   background-image: url("./images/svg/dots_9px_9px_3_3.svg");
   background-size: 100%;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 @media (min-width: 768px) {
@@ -1834,6 +1834,7 @@ body main section div:nth-child(2) div .first,
 body main section div:nth-child(2) div .second,
 body main section div:nth-child(2) div .third,
 body main section div:nth-child(2) div .fourth,
+body main section div:nth-child(2) div .fifth,
 body main section div:nth-child(2) div .project-description--link,
 body main section div:nth-child(2) div .section-paragraph--link {
   opacity: 0;
@@ -1843,6 +1844,7 @@ body main section.is-visible div:nth-child(2) div .first,
 body main section.is-visible div:nth-child(2) div .second,
 body main section.is-visible div:nth-child(2) div .third,
 body main section.is-visible div:nth-child(2) div .fourth,
+body main section.is-visible div:nth-child(2) div .fifth,
 body main section.is-visible div:nth-child(2) div .project-description--link,
 body main section.is-visible div:nth-child(2) div .section-paragraph--link {
   opacity: 1;
@@ -1868,6 +1870,11 @@ body main section.is-visible div:nth-child(2) div .fourth {
   transition: opacity 1.5s 10.5s;
 }
 
+body main section.is-visible div:nth-child(2) div .fifth {
+  -webkit-transition: opacity 1.5s 13.5s;
+  transition: opacity 1.5s 13.5s;
+}
+
 body main section.is-visible div:nth-child(2) div .section-paragraph--link {
   -webkit-transition: opacity 1.5s 3s;
   transition: opacity 1.5s 3s;
@@ -1891,6 +1898,11 @@ body main section.is-visible div:nth-child(2) div .third.project-description--pa
 body main section.is-visible div:nth-child(2) div .fourth.project-description--paragraph {
   -webkit-transition: opacity 1.5s 4s;
   transition: opacity 1.5s 4s;
+}
+
+body main section.is-visible div:nth-child(2) div .fifth.project-description--paragraph {
+  -webkit-transition: opacity 1.5s 5s;
+  transition: opacity 1.5s 5s;
 }
 
 body main section.is-visible div:nth-child(2) div .project-description--link {

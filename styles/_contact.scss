@@ -2,7 +2,7 @@
 @import "./mixins";
 
 .section-contact {
-  @include mobile-grid;
+  @include main-grid;
   @include section-background;
 
   &--title {

@@ -2,7 +2,7 @@
 @import "./mixins";
 
 .menu-wrapper {
-  @include mobile-grid;
+  @include main-grid;
   @include menu-background;
   position: fixed;
   top: 0;

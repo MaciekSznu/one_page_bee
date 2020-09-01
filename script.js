@@ -55,7 +55,7 @@ menuItems.forEach((item, index) => {
   })
 });
 
-// dots as menu links
+// DOTS AS MENU LINKS
 dots.forEach((item, index) => {
   clickPreventDefault(item, () => {
     scrollToSection(index);
@@ -64,10 +64,10 @@ dots.forEach((item, index) => {
 });
 
 
-// viewport
+// VIEWPORT
 const isInViewport = (el) => {
   const rect = el.getBoundingClientRect();
-  return rect.top <= 0  ? true : false;
+  return rect.top <= 0 ? true : false;
 }
 
 const main = document.querySelector('#main');

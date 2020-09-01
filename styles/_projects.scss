@@ -2,13 +2,13 @@
 @import "./mixins";
 
 .section-projects {
-  @include mobile-grid;
+  @include main-grid;
   @include alt-section-background;
 
   &:nth-of-type(even) {
     @include section-background;
   }
-  
+
   &--title {
     display: grid;
     grid-area: header;
@@ -67,27 +67,12 @@
   @media (min-width: 768px) {
     &-wrapper {
       @include section-wrapper-tablet;
-      // .section-title {
-      //   @include section-title-tablet;
-      // }
     }
   }
 
   @media (min-width: 1280px) {
     &-wrapper {
       @include section-wrapper-desktop;
-
-      // .section-title {
-      //   @include section-title-desktop;
-      // }
-
-      // .section-description {
-      //   @include section-description-desktop;
-
-      //   .section-paragraph {
-      //     @include section-paragraph-desktop;
-      //   }
-      // }
     }
   }
   .footer {

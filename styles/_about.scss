@@ -2,7 +2,7 @@
 @import "./mixins";
 
 .section-about {
-  @include mobile-grid;
+  @include main-grid;
   @include section-background;
 
   &-wrapper {

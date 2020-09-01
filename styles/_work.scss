@@ -2,7 +2,7 @@
 @import "./mixins";
 
 .section-work {
-  @include mobile-grid;
+  @include main-grid;
   @include alt-section-background;
 
   &:nth-of-type(even) {
