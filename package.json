@@ -1,0 +1,23 @@
+{
+  "name": "one_page_bee",
+  "version": "1.0.0",
+  "description": "one_page_bee",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify_css": "minify styles.css > ./dist/styles.css",
+    "minify_js": "minify script.js animations.js > ./dist/script.js",
+    "gzip_html": "gzipper compress index.html ./dist",
+    "build_dist": "npm-run-all -p minify_css minify_js gzip_html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaciekSznu/one_page_bee.git"
+  },
+  "author": "MaciekSznu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaciekSznu/one_page_bee/issues"
+  },
+  "homepage": "https://github.com/MaciekSznu/one_page_bee#readme"
+}
