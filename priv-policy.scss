@@ -1,0 +1,96 @@
+@import "./styles/normalize";
+@import "./styles/variables";
+@import "./styles/mixins";
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  width: 100vw;
+  max-width: calc(100vw - 4px);
+  height: auto;
+  font-family: $text-base-font;
+  background-color: $dark-yellow;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include main-scrollbar;
+
+  .privacy-policy {
+    max-width: 1280px;
+    padding: 1rem;
+
+    @media (min-width: 768px) {
+      padding: 1rem 2rem;
+    }
+
+    &-wrapper {
+      margin-bottom: 1rem;
+      h1 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        margin: 1rem 0;
+      }
+
+      .paragraphs-wrapper {
+        h2 {
+          font-size: 1.25rem;
+          margin: 1rem 0;
+        }
+
+        ol {
+          padding-left: 1rem;
+
+          li {
+            padding-bottom: .25rem;
+            ul {
+              padding-left: 1rem;
+
+              li a {
+                text-decoration: none;
+                color: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+
+      .copyright {
+        @include contact-paragraph;
+        color: #ffffff;
+        margin-top: 0;
+        font-weight: 700;
+        text-transform: uppercase;
+    
+        @media (min-width: 768px) {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

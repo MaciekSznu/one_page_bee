@@ -1,5 +1,6 @@
 @import "./styles/normalize";
 @import "./styles/variables";
+@import "./styles/mixins";
 @import "./styles/about";
 @import "./styles/contact";
 @import "./styles/work";
@@ -50,6 +51,45 @@ body {
     }
     #turn {
       display: flex;
+    }
+  }
+
+  .cookie-banner {
+    position: fixed;
+    bottom: 40px;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(#ffffff, .5);
+    border-radius: .5rem;
+
+    &-text {
+      font-family: $text-base-font;
+      color: $base-dark-color;
+      font-size: .75rem;
+      max-width: 85%;
+
+      a {
+        color: inherit;
+      }
+    }
+
+    .close {
+      height: 20px;
+      padding: 0 5px;
+      background-color: $base-dark-color;
+      border: none;
+      color: white;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    &.hidden {
+      display: none;
     }
   }
 

@@ -5,10 +5,12 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "minify_css": "minify styles.css > ./dist/styles.css",
+    "minify_maincss": "minify styles.css > ./dist/styles.css",
+    "minify_privcss": "minify priv-policy.css > ./dist/priv-policy.css",
     "minify_js": "minify script.js animations.js > ./dist/script.js",
-    "minify_html": "minify index.html > ./dist/index.html",
-    "build_dist": "npm-run-all -p minify_css minify_js minify_html"
+    "minify_indexhtml": "minify index.html > ./dist/index.html",
+    "minify_privacy-policyhtml": "minify privacy-policy.html > ./dist/privacy-policy.html",
+    "build_dist": "npm-run-all -p minify_maincss minify_privcss minify_js minify_indexhtml minify_privacy-policyhtml"
   },
   "repository": {
     "type": "git",

@@ -1742,6 +1742,51 @@ body #turn {
   }
 }
 
+body .cookie-banner {
+  position: fixed;
+  bottom: 40px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  padding: .5rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: .5rem;
+}
+
+body .cookie-banner-text {
+  font-family: "Raleway", sans-serif;
+  color: #101820;
+  font-size: .75rem;
+  max-width: 85%;
+}
+
+body .cookie-banner-text a {
+  color: inherit;
+}
+
+body .cookie-banner .close {
+  height: 20px;
+  padding: 0 5px;
+  background-color: #101820;
+  border: none;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+body .cookie-banner.hidden {
+  display: none;
+}
+
 body::-webkit-scrollbar {
   width: 4px;
 }
