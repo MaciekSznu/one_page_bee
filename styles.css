@@ -359,8 +359,8 @@ template {
 
 .section-about:after {
   position: absolute;
-  top: 44px;
-  left: 44px;
+  top: 60px;
+  left: 35px;
   width: 25px;
   height: 50px;
   content: "";
@@ -521,8 +521,8 @@ template {
 
 .section-contact:after {
   position: absolute;
-  top: 44px;
-  left: 44px;
+  top: 60px;
+  left: 35px;
   width: 25px;
   height: 50px;
   content: "";
@@ -713,7 +713,7 @@ template {
 
 .section-work:after {
   position: absolute;
-  bottom: 44px;
+  bottom: 60px;
   right: 44px;
   width: 25px;
   height: 50px;
@@ -750,8 +750,8 @@ template {
 
 .section-work:nth-of-type(even):after {
   position: absolute;
-  top: 44px;
-  left: 44px;
+  top: 60px;
+  left: 35px;
   width: 25px;
   height: 50px;
   content: "";
@@ -936,7 +936,7 @@ template {
 
 .section-projects:after {
   position: absolute;
-  bottom: 44px;
+  bottom: 60px;
   right: 44px;
   width: 25px;
   height: 50px;
@@ -973,8 +973,8 @@ template {
 
 .section-projects:nth-of-type(even):after {
   position: absolute;
-  top: 44px;
-  left: 44px;
+  top: 60px;
+  left: 35px;
   width: 25px;
   height: 50px;
   content: "";
@@ -1210,7 +1210,7 @@ template {
 
 .section-technologies:after {
   position: absolute;
-  bottom: 44px;
+  bottom: 60px;
   right: 44px;
   width: 25px;
   height: 50px;
@@ -1649,8 +1649,8 @@ template {
 
 #turn:after {
   position: absolute;
-  top: 44px;
-  left: 44px;
+  top: 60px;
+  left: 35px;
   width: 25px;
   height: 50px;
   content: "";
@@ -1953,5 +1953,65 @@ body main section.is-visible div:nth-child(2) div .fifth.project-description--pa
 body main section.is-visible div:nth-child(2) div .project-description--link {
   -webkit-transition: opacity 1.5s 5s;
   transition: opacity 1.5s 5s;
+}
+
+body .blog-link-wrapper {
+  position: fixed;
+  left: 8px;
+  top: 8px;
+  height: 60px;
+  width: 80px;
+}
+
+body .blog-link-wrapper .blog-link {
+  position: relative;
+  display: block;
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  max-width: 220px;
+  border: 2px solid #ffffff;
+  border-radius: 2rem;
+  padding: 0.75rem 2rem;
+  margin: 1rem auto;
+  overflow: hidden;
+  background: transparent;
+  margin: 0;
+  padding: .5rem 1rem;
+}
+
+body .blog-link-wrapper .blog-link:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(rgba(255, 255, 255, 0.4)), to(transparent));
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+body .blog-link-wrapper .blog-link:hover:before {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+}
+
+@media (min-width: 768px) {
+  body .blog-link-wrapper {
+    left: 45px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body .blog-link-wrapper {
+    left: 70px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

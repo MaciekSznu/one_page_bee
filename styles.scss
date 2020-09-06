@@ -202,4 +202,8 @@ body {
       }
     }
   }
+
+  .blog-link-wrapper {
+    @include blog-link-wrapper;
+  }
 }
