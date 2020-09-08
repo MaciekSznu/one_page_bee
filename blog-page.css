@@ -507,7 +507,7 @@ body .blog-wrapper .blog-article-summary--subtitle {
   color: #101820;
   font-size: 1.25rem;
   font-weight: 700;
-  margin: 1rem 0 .5rem;
+  margin: .5rem 0 .5rem;
 }
 
 @media (min-width: 768px) {

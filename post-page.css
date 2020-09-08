@@ -514,7 +514,7 @@ body .post-wrapper .post-article--subtitle {
   color: #101820;
   font-size: 1.25rem;
   font-weight: 700;
-  margin: 1rem 0 .5rem;
+  margin: .5rem 0 .5rem;
 }
 
 @media (min-width: 768px) {
@@ -599,6 +599,12 @@ body .post-wrapper .post-article--link:hover {
   to {
     -webkit-mask-position: -50%;
   }
+}
+
+body .post-wrapper .post-article--icon {
+  margin-top: .75rem;
+  height: 2.5rem;
+  width: auto;
 }
 
 body .cookie-banner {
