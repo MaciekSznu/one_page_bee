@@ -272,12 +272,12 @@
 
 @mixin article-summary {
   font-family: $text-base-font;
-  padding: 0 .5rem 1rem;
+  padding: 0 0.5rem 1rem;
 
   &--date {
     color: $base-dark-color;
-    font-size: .9rem;
-    margin-bottom: .5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
     line-height: 1.15;
     text-align: right;
   }
@@ -301,7 +301,7 @@
     color: $base-dark-color;
     font-size: 1.25rem;
     font-weight: 700;
-    margin: .5rem 0 .5rem;
+    margin: 0.5rem 0 0.5rem;
 
     @media (min-width: 768px) {
       font-size: 1.35rem;
@@ -310,7 +310,7 @@
   &--text {
     color: $base-dark-color;
     font-size: 1rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     line-height: 1.25;
     font-weight: 400;
 
@@ -325,10 +325,10 @@
       }
     }
 
-    a{
+    a {
       text-decoration: none;
       color: inherit;
-      font-weight:600;
+      font-weight: 600;
     }
     .color-red {
       color: #a00000;
@@ -365,7 +365,7 @@
   .blog-link {
     @include section-link;
     margin: 0;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 
   @media (min-width: 768px) {
@@ -374,5 +374,41 @@
 
   @media (min-width: 1024px) {
     left: 70px;
+  }
+}
+
+@mixin calculator-label {
+  font-family: $text-base-font;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: $base-dark-color;
+}
+
+@mixin calculator-box {
+  width: 105px;
+  height: 80px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: $dark-yellow;
+  background: linear-gradient(45deg, $dark-yellow 0%, $base-yellow 20%, $light-yellow 100%);
+}
+
+@mixin shine-hover-effect {
+  &:hover {
+    mask-image: linear-gradient(-75deg, rgba(#fff, 1) 30%, rgba($base-yellow, 0.5) 50%, rgba(#fff, 1) 70%);
+    mask-size: 275%;
+    animation: shine 1.25s;
+  }
+
+  @keyframes shine {
+    from {
+      -webkit-mask-position: 100%;
+    }
+
+    to {
+      -webkit-mask-position: -50%;
+    }
   }
 }

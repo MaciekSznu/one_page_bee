@@ -1,0 +1,379 @@
+@import "./styles/normalize";
+@import "./styles/variables";
+@import "./styles/mixins";
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+body {
+  @include main-grid;
+  grid-template-rows: 60px 1fr 60px;
+  scroll-snap-align: unset;
+  width: 100vw;
+  max-width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  background-color: $dark-yellow;
+  background: linear-gradient(225deg, $dark-yellow 0%, $base-yellow 50%, $light-yellow 100%);
+  overflow: hidden;
+
+  .form-page-header {
+    display: grid;
+    grid-area: header;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-items: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+
+    @include section-title;
+
+    &--link {
+      @include contact-link;
+      color: $base-dark-color;
+
+      &:nth-of-type(2) {
+        font-size: 1.15rem;
+        font-weight: 900;
+      }
+    }
+  }
+  .calculator-wrapper {
+    @include blog-wrapper;
+    display: grid;
+    grid-area: content;
+    grid-template-rows: 40px 30px minmax(90px, 180px) auto;
+    grid-template-areas:
+      "title"
+      "price"
+      "description"
+      "form";
+    // max-height: calc(100vh - 2 * #{$mobile-header-height});
+    align-content: center;
+
+    .calculator__title {
+      @include section-title;
+      grid-area: title;
+    }
+
+    .calculator__base-price {
+      @include section-paragraph;
+      margin: 0;
+      font-weight: 700;
+      grid-area: price;
+    }
+
+    .calculator__base-price-description-wrapper {
+      grid-area: description;
+      align-self: start;
+
+      .calculator__base-price--header {
+        @include section-paragraph;
+        margin: 0;
+        font-weight: 700;
+      }
+
+      .calculator__base-price--text {
+        @include section-paragraph;
+        margin: 0;
+      }
+    }
+
+    .form-wrapper {
+      grid-area: form;
+      height: 100%;
+      width: 100%;
+      max-width: 640px;
+      min-height: 280px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+
+      .form-progress {
+        position: relative;
+        height: 40px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        .progress-indicator {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: calc(100% / 3 - 20px);
+          background: rgba($dark-yellow, 0.3);
+          background: linear-gradient(
+            90deg,
+            rgba($dark-yellow, 0.3) 0%,
+            rgba($base-yellow, 0.4) 20%,
+            rgba($light-yellow, 0.5) 100%
+          );
+          transition: 0.75s;
+
+          &:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: -20px;
+            height: 100%;
+            width: 20px;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border: 20px solid rgba($light-yellow, 0.5);
+            border-left: 0;
+          }
+        }
+        .progress-step {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 40px;
+          line-height: 40px;
+          width: calc(100% / 3);
+          font-family: $text-base-font;
+          font-size: 18px;
+          font-weight: 700;
+          text-align: center;
+          z-index: 5;
+
+          &.step-02 {
+            left: calc(100% / 3);
+          }
+          &.step-03 {
+            left: calc(100% / 3 * 2);
+          }
+        }
+      }
+
+      .calculator {
+        width: 100%;
+        height: auto;
+        padding: 16px 0;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        .input-box {
+          @include calculator-box;
+          width: 160px;
+          display: grid;
+          grid-template-rows: 60% 40%;
+          grid-template-columns: 100%;
+          grid-template-areas:
+            "label"
+            "input";
+          justify-items: center;
+
+          input[type="number"]::-webkit-inner-spin-button,
+          input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          input[type="number"]:focus {
+            border: none;
+            outline-color: $dark-yellow;
+          }
+
+          &__label {
+            grid-area: label;
+
+            @include calculator-label;
+
+            @include shine-hover-effect;
+          }
+
+          &__input {
+            grid-area: input;
+            height: 22px;
+            width: 40px;
+            padding: 2px 4px;
+            border: none;
+            border-radius: 4px;
+
+            font-family: $text-base-font;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            color: $base-dark-color;
+          }
+        }
+
+        .checkbox-wrapper {
+          @include calculator-box;
+          [type="checkbox"]:checked,
+          [type="checkbox"]:not(:checked),
+          [type="radio"]:checked,
+          [type="radio"]:not(:checked) {
+            position: absolute;
+            left: -9999px;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+          }
+
+          .checkbox__input:checked + .checkbox__label,
+          .checkbox__input:not(:checked) + .checkbox__label {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+
+            @include calculator-label;
+
+            @include shine-hover-effect;
+          }
+
+          .checkbox__input:checked + .checkbox__label {
+            color: $light-yellow;
+            text-decoration-line: line-through;
+          }
+
+          //dodac to js'em
+          // .checkbox__input:checked {
+          //   border: 2px solid $light-yellow;
+          // }
+        }
+
+        .radio-wrapper {
+          @include calculator-box;
+          [type="radio"]:checked,
+          [type="radio"]:not(:checked) {
+            position: absolute;
+            left: -9999px;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+          }
+
+          .radio__input:checked + .radio__label,
+          .radio__input:not(:checked) + .radio__label {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+
+            @include calculator-label;
+
+            @include shine-hover-effect;
+          }
+
+          .radio__input:checked + .radio__label {
+            color: $light-yellow;
+            text-decoration-line: line-through;
+          }
+        }
+
+        .next-page {
+          align-self: center;
+          margin: 16px auto 0;
+          width: 40%;
+          max-width: 140px;
+          padding: 8px 0;
+          border: none;
+          border-radius: 8px;
+          font-family: $text-base-font;
+          font-size: 16px;
+          font-weight: 700;
+          cursor: pointer;
+          background-color: $dark-yellow;
+          background: linear-gradient(225deg, $dark-yellow 0%, $base-yellow 20%, $light-yellow 100%);
+
+          @include shine-hover-effect;
+        }
+
+        @media (min-width: 768px) {
+          align-items: center;
+        }
+      }
+
+      .summary-price-wrapper {
+        width: 100%;
+        height: auto;
+        margin: 1rem auto;
+
+        .summary-price__price,
+        .summary-price__item {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      @media (min-width: 768px) {
+        margin-top: 32px;
+        min-height: 240px;
+      }
+    }
+  }
+  .cookie-banner {
+    position: fixed;
+    bottom: 40px;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(#ffffff, 0.5);
+    border-radius: 0.5rem;
+
+    &-text {
+      font-family: $text-base-font;
+      color: $base-dark-color;
+      font-size: 0.75rem;
+      max-width: 85%;
+
+      a {
+        color: inherit;
+      }
+    }
+
+    .close {
+      height: 20px;
+      padding: 0 5px;
+      background-color: $base-dark-color;
+      border: none;
+      color: white;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .footer {
+    @include footer;
+  }
+  @include main-scrollbar;
+}

@@ -10,9 +10,11 @@
     "minify_secondarycss": "postcss secondary.css > ./dist/secondary.css",
     "minify_blogcss": "postcss blog-page.css > ./dist/blog-page.css",
     "minify_postcss": "postcss post-page.css > ./dist/post-page.css",
+    "minify_formcss": "postcss form-page.css > ./dist/form-page.css",
     "minify_js": "minify script.js animations.js > ./dist/script.js",
     "minify_indexhtml": "minify index.html > ./dist/index.html",
     "minify_bloghtml": "minify blog-page.html > ./dist/blog-page.html",
+    "minify_formhtml": "minify form-page.html > ./dist/form-page.html",
     "minify_posthtml": "minify blog-post-2020-09-08.html > ./dist/blog-post-2020-09-08.html",
     "minify_privacy-policyhtml": "minify privacy-policy.html > ./dist/privacy-policy.html",
     "build_dist": "npm-run-all -p minify_maincss minify_privcss minify_secondarycss minify_blogcss minify_postcss minify_js minify_indexhtml minify_bloghtml minify_posthtml minify_privacy-policyhtml"

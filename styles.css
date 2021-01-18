@@ -1014,7 +1014,7 @@ body .blog-link-wrapper .blog-link {
   overflow: hidden;
   background: transparent;
   margin: 0;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 body .blog-link-wrapper .blog-link:before {

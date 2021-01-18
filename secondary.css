@@ -582,6 +582,11 @@
   }
 }
 
+.section-projects .project-wrapper .project-description--paragraph a {
+  text-decoration: none;
+  color: #101820;
+}
+
 .section-projects .project-wrapper .project-description--link {
   position: relative;
   display: block;

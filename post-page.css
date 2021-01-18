@@ -479,14 +479,14 @@ body .post-wrapper {
 
 body .post-wrapper .post-article {
   font-family: "Raleway", sans-serif;
-  padding: 0 .5rem 1rem;
+  padding: 0 0.5rem 1rem;
   max-width: 1280px;
 }
 
 body .post-wrapper .post-article--date {
   color: #101820;
-  font-size: .9rem;
-  margin-bottom: .5rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
   line-height: 1.15;
   text-align: right;
 }
@@ -514,7 +514,7 @@ body .post-wrapper .post-article--subtitle {
   color: #101820;
   font-size: 1.25rem;
   font-weight: 700;
-  margin: .5rem 0 .5rem;
+  margin: 0.5rem 0 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -526,7 +526,7 @@ body .post-wrapper .post-article--subtitle {
 body .post-wrapper .post-article--text {
   color: #101820;
   font-size: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   line-height: 1.25;
   font-weight: 400;
 }
