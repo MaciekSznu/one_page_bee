@@ -14,19 +14,6 @@ const click = (target, callback) => {
   });
 };
 
-// const calculatorStep01 = document.querySelector("#step1");
-// const calculatorStep02 = document.querySelector("#step2");
-// const calculatorStep03 = document.querySelector("#step3");
-
-// const nextPage01 = document.querySelector(".next-01");
-// const nextPage02 = document.querySelector(".next-02");
-// const nextPage03 = document.querySelector(".next-03");
-
-// const prevPage01 = document.querySelector(".prev-01");
-// const prevPage02 = document.querySelector(".prev-02");
-
-const progressIndicator = document.querySelector(".progress-indicator");
-
 const sections = document.querySelector("#sections");
 const subPages = document.querySelector("#sub-pages");
 const blog = document.querySelector("#blog");
@@ -39,23 +26,20 @@ const hosting = document.querySelector("#hosting");
 const photos = document.querySelector("#photos");
 const texts = document.querySelector("#texts");
 
-// console.log(sections.value);
-// console.log(blog.checked);
-
 const basePrice = 599;
 
-// potrzebne to?
-const sectionsPrice = sections.value * 49 || 0;
-const subPagesPrice = subPages.value * 49 || 0;
-const blogPrice = blog.checked ? 99 : 0;
-const mapPrice = map.checked ? 49 : 0;
-const messengerPrice = messenger.checked ? 49 : 0;
-const socialPrice = social.checked ? 49 : 0;
-const googlePrice = google.checked ? 49 : 0;
-const optimalizationPrice = optimalization.checked ? 49 : 0;
-const hostingPrice = hosting.checked ? 79 : 0;
-const photosPrice = photos.checked ? 79 : 0;
-const textsPrice = texts.checked ? 99 : 0;
+const sectionsPrice = 0,
+  subPagesPrice = 0,
+  blogPrice = 0,
+  mapPrice = 0,
+  messengerPrice = 0,
+  socialPrice = 0,
+  googlePrice = 0,
+  optimalizationPrice = 0,
+  hostingPrice = 0,
+  photosPrice = 0,
+  textsPrice = 0,
+  servicePrice = 0;
 
 const priceElements = [
   basePrice,
@@ -70,8 +54,10 @@ const priceElements = [
   hostingPrice,
   photosPrice,
   textsPrice,
+  servicePrice,
 ];
 
+// do skasowania !!!!!!!
 console.log(priceElements);
 
 const calculateTotalPrice = () =>
@@ -92,13 +78,20 @@ sections.addEventListener("input", (e) => {
 });
 
 subPages.addEventListener("input", (e) => {
-  priceElements[2] = e.target.value * 49;
+  priceElements[2] = e.target.value * 69;
   updateFinalPrice();
 });
 
 document.querySelectorAll(".checkbox__input").forEach((item, index) => {
   item.addEventListener("change", (e) => {
     priceElements[index + 3] = item.checked ? parseInt(item.value) : 0;
+    updateFinalPrice();
+  });
+});
+
+document.querySelectorAll(".radio__input").forEach((item) => {
+  item.addEventListener("change", (e) => {
+    priceElements[priceElements.length - 1] = item.checked ? parseInt(item.value) : 0;
     updateFinalPrice();
   });
 });
