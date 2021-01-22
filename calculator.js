@@ -1,19 +1,6 @@
 "use strict";
 
-// BASE FUNCTIONS
-const clickPreventDefault = (target, callback) => {
-  target.addEventListener("click", (e) => {
-    e.preventDefault();
-    return callback(e);
-  });
-};
-
-const click = (target, callback) => {
-  target.addEventListener("click", (e) => {
-    return callback(e);
-  });
-};
-
+// INPUTS
 const sections = document.querySelector("#sections");
 const subPages = document.querySelector("#sub-pages");
 const blog = document.querySelector("#blog");
@@ -26,9 +13,9 @@ const hosting = document.querySelector("#hosting");
 const photos = document.querySelector("#photos");
 const texts = document.querySelector("#texts");
 
-const basePrice = 599;
-
-const sectionsPrice = 0,
+// INITIAL PRICES VALUES
+const basePrice = 599,
+  sectionsPrice = 0,
   subPagesPrice = 0,
   blogPrice = 0,
   mapPrice = 0,
@@ -41,6 +28,7 @@ const sectionsPrice = 0,
   textsPrice = 0,
   servicePrice = 0;
 
+// PRICES ARRAY
 const priceElements = [
   basePrice,
   sectionsPrice,
@@ -57,31 +45,36 @@ const priceElements = [
   servicePrice,
 ];
 
-// do skasowania !!!!!!!
-console.log(priceElements);
-
+// TOTAL PRICE CALCULATOR
 const calculateTotalPrice = () =>
   priceElements.reduce((a, b) => {
     return a + b;
   });
 
+// UPDATE TOTAL PRICE VALUE
 const updateFinalPrice = () => {
   const finalPriceContainer = document.querySelector("#final-price");
-  finalPriceContainer.innerHTML = calculateTotalPrice();
+  finalPriceContainer.innerHTML = calculateTotalPrice() + " zł";
 };
 
-// dodać funkcję toglującą klasę z afterem i zmieniającą opacity kropeczki
+// NUMBER INPUTS EVENT LISTENERS
+const sectionsAndSubpages = document.querySelectorAll('input[type="number"]');
+const prices = {
+  section: 49,
+  subPage: 69,
+};
 
-sections.addEventListener("input", (e) => {
-  priceElements[1] = e.target.value * 49;
-  updateFinalPrice();
+sectionsAndSubpages.forEach((item, index) => {
+  item.addEventListener("input", (e) => {
+    priceElements[index + 1] = e.target.value * prices[Object.keys(prices)[index]];
+    e.target.value !== 0 && e.target.value !== null && e.target.value !== ""
+      ? e.target.parentNode.classList.add("filled")
+      : e.target.parentNode.classList.remove("filled");
+    updateFinalPrice();
+  });
 });
 
-subPages.addEventListener("input", (e) => {
-  priceElements[2] = e.target.value * 69;
-  updateFinalPrice();
-});
-
+// CHECKBOX INPUTS EVENT LISTENERS
 document.querySelectorAll(".checkbox__input").forEach((item, index) => {
   item.addEventListener("change", (e) => {
     priceElements[index + 3] = item.checked ? parseInt(item.value) : 0;
@@ -89,6 +82,7 @@ document.querySelectorAll(".checkbox__input").forEach((item, index) => {
   });
 });
 
+// RADIO INPUTS EVENT LISTENERS
 document.querySelectorAll(".radio__input").forEach((item) => {
   item.addEventListener("change", (e) => {
     priceElements[priceElements.length - 1] = item.checked ? parseInt(item.value) : 0;

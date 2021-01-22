@@ -69,7 +69,6 @@ body {
       "price"
       "description"
       "form";
-    // max-height: calc(100vh - 2 * #{$mobile-header-height});
     align-content: center;
 
     .calculator__title {
@@ -88,12 +87,6 @@ body {
       grid-area: description;
       align-self: start;
       margin: 16px auto;
-
-      .calculator__base-price--header {
-        @include section-paragraph;
-        margin: 0;
-        font-weight: 700;
-      }
 
       .calculator__base-price--text {
         @include section-paragraph;
@@ -126,6 +119,10 @@ body {
           text-align: center;
           margin-bottom: 16px;
           line-height: 20px;
+          background-color: rgba($white, 0.5);
+          border: none;
+          border-radius: 4px;
+          padding: 16px;
         }
 
         .input-box {
@@ -187,8 +184,10 @@ body {
           }
 
           &.filled {
-            color: $light-yellow;
-            font-weight: 700;
+            .input-box__label {
+              color: $light-yellow;
+              font-weight: 700;
+            }
 
             &::after {
               opacity: 1;
@@ -310,11 +309,22 @@ body {
         width: 100%;
         height: auto;
         margin: 1rem auto;
+        background-color: $dark-yellow;
+        background: linear-gradient(45deg, $dark-yellow 0%, $base-yellow 20%, $light-yellow 100%);
+        border-radius: 4px;
 
         .summary-price__price,
         .summary-price__item {
           width: 100%;
           text-align: center;
+          font-family: $text-base-font;
+          font-size: 22px;
+          padding: 12px 24px 24px;
+        }
+
+        .summary-price__item {
+          font-size: 16px;
+          padding: 16px 16px 0;
         }
       }
 

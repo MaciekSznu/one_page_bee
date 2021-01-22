@@ -519,17 +519,6 @@ body .calculator-wrapper .calculator__base-price-description-wrapper {
   margin: 16px auto;
 }
 
-body .calculator-wrapper .calculator__base-price-description-wrapper .calculator__base-price--header {
-  font-family: "Raleway", sans-serif;
-  font-size: 1.1rem;
-  margin: 1rem 0;
-  font-weight: 500;
-  text-align: center;
-  color: #101820;
-  margin: 0;
-  font-weight: 700;
-}
-
 body .calculator-wrapper .calculator__base-price-description-wrapper .calculator__base-price--text {
   font-family: "Raleway", sans-serif;
   font-size: 1.1rem;
@@ -574,6 +563,10 @@ body .calculator-wrapper .form-wrapper .calculator .input-description {
   text-align: center;
   margin-bottom: 16px;
   line-height: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 4px;
+  padding: 16px;
 }
 
 body .calculator-wrapper .form-wrapper .calculator .input-box {
@@ -665,7 +658,7 @@ body .calculator-wrapper .form-wrapper .calculator .input-box__input {
   color: #101820;
 }
 
-body .calculator-wrapper .form-wrapper .calculator .input-box.filled {
+body .calculator-wrapper .form-wrapper .calculator .input-box.filled .input-box__label {
   color: #fbfcd4;
   font-weight: 700;
 }
@@ -854,12 +847,23 @@ body .calculator-wrapper .form-wrapper .summary-price-wrapper {
   width: 100%;
   height: auto;
   margin: 1rem auto;
+  background-color: #fbc403;
+  background: linear-gradient(45deg, #fbc403 0%, #ffdd03 20%, #fbfcd4 100%);
+  border-radius: 4px;
 }
 
 body .calculator-wrapper .form-wrapper .summary-price-wrapper .summary-price__price,
 body .calculator-wrapper .form-wrapper .summary-price-wrapper .summary-price__item {
   width: 100%;
   text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 22px;
+  padding: 12px 24px 24px;
+}
+
+body .calculator-wrapper .form-wrapper .summary-price-wrapper .summary-price__item {
+  font-size: 16px;
+  padding: 16px 16px 0;
 }
 
 @media (min-width: 768px) {
