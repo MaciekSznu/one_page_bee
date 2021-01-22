@@ -14,16 +14,16 @@ const click = (target, callback) => {
   });
 };
 
-const calculatorStep01 = document.querySelector("#step1");
-const calculatorStep02 = document.querySelector("#step2");
-const calculatorStep03 = document.querySelector("#step3");
+// const calculatorStep01 = document.querySelector("#step1");
+// const calculatorStep02 = document.querySelector("#step2");
+// const calculatorStep03 = document.querySelector("#step3");
 
-const nextPage01 = document.querySelector(".next-01");
-const nextPage02 = document.querySelector(".next-02");
-const nextPage03 = document.querySelector(".next-03");
+// const nextPage01 = document.querySelector(".next-01");
+// const nextPage02 = document.querySelector(".next-02");
+// const nextPage03 = document.querySelector(".next-03");
 
-const prevPage01 = document.querySelector(".prev-01");
-const prevPage02 = document.querySelector(".prev-02");
+// const prevPage01 = document.querySelector(".prev-01");
+// const prevPage02 = document.querySelector(".prev-02");
 
 const progressIndicator = document.querySelector(".progress-indicator");
 
@@ -43,36 +43,6 @@ const texts = document.querySelector("#texts");
 // console.log(blog.checked);
 
 const basePrice = 599;
-
-// const getSectionsPrice = (e) => {
-//   const sectionsValue = e ? e.target.value : 0;
-//   const sectionsPrice = sectionsValue ? sectionsValue * 49 : 0;
-//   console.log(sectionsPrice);
-//   return sectionsPrice;
-// };
-// const getSubPagesPrice = (e) => {
-//   const subPagesValue = e ? e.target.value : 0;
-//   const subPagesPrice = subPagesValue ? subPagesValue * 49 : 0;
-//   console.log(subPagesPrice);
-//   return subPagesPrice;
-// };
-
-// const getBlogPrice = (e) => {
-//   const blogPrice = blog.checked ? 99 : 0;
-//   console.log(blogPrice);
-//   return blogPrice;
-// };
-
-// const getMapPrice = (e) => {
-//   const mapPrice = map.checked ? 49 : 0;
-//   console.log(mapPrice);
-//   return mapPrice;
-// };
-
-// sections.oninput = getSectionsPrice;
-// subPages.oninput = getSubPagesPrice;
-// blog.onchange = getBlogPrice;
-// map.onchange = getMapPrice;
 
 // potrzebne to?
 const sectionsPrice = sections.value * 49 || 0;
@@ -113,6 +83,8 @@ const updateFinalPrice = () => {
   const finalPriceContainer = document.querySelector("#final-price");
   finalPriceContainer.innerHTML = calculateTotalPrice();
 };
+
+// dodać funkcję toglującą klasę z afterem i zmieniającą opacity kropeczki
 
 sections.addEventListener("input", (e) => {
   priceElements[1] = e.target.value * 49;

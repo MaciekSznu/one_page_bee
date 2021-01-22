@@ -63,7 +63,7 @@ body {
     @include blog-wrapper;
     display: grid;
     grid-area: content;
-    grid-template-rows: 40px 30px minmax(90px, 180px) auto;
+    grid-template-rows: 40px 30px minmax(90px, auto) auto;
     grid-template-areas:
       "title"
       "price"
@@ -87,6 +87,7 @@ body {
     .calculator__base-price-description-wrapper {
       grid-area: description;
       align-self: start;
+      margin: 16px auto;
 
       .calculator__base-price--header {
         @include section-paragraph;
@@ -97,6 +98,7 @@ body {
       .calculator__base-price--text {
         @include section-paragraph;
         margin: 0;
+        line-height: 22px;
       }
     }
 
@@ -110,73 +112,24 @@ body {
       overflow: hidden;
       border-radius: 12px;
 
-      .form-progress {
-        position: relative;
-        height: 40px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-wrap: nowrap;
-        .progress-indicator {
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: calc(100% / 3 - 20px);
-          background: rgba($dark-yellow, 0.3);
-          background: linear-gradient(
-            90deg,
-            rgba($dark-yellow, 0.3) 0%,
-            rgba($base-yellow, 0.4) 20%,
-            rgba($light-yellow, 0.5) 100%
-          );
-          transition: 0.75s;
-
-          &:after {
-            position: absolute;
-            content: "";
-            top: 0;
-            right: -20px;
-            height: 100%;
-            width: 20px;
-            border-top-right-radius: 50%;
-            border-bottom-right-radius: 50%;
-            border: 20px solid rgba($light-yellow, 0.5);
-            border-left: 0;
-          }
-        }
-        .progress-step {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 40px;
-          line-height: 40px;
-          width: calc(100% / 3);
-          font-family: $text-base-font;
-          font-size: 18px;
-          font-weight: 700;
-          text-align: center;
-          z-index: 5;
-
-          &.step-02 {
-            left: calc(100% / 3);
-          }
-          &.step-03 {
-            left: calc(100% / 3 * 2);
-          }
-        }
-      }
-
       .calculator {
         width: 100%;
         height: auto;
         padding: 16px 0;
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: space-between;
 
+        .input-description {
+          width: 100%;
+          font-family: $text-base-font;
+          text-align: center;
+          margin-bottom: 16px;
+          line-height: 20px;
+        }
+
         .input-box {
+          position: relative;
           @include calculator-box;
           width: 160px;
           display: grid;
@@ -195,6 +148,19 @@ body {
           input[type="number"]:focus {
             border: none;
             outline-color: $dark-yellow;
+          }
+
+          &:after {
+            position: absolute;
+            content: "";
+            left: 8px;
+            bottom: 8px;
+            width: 8px;
+            height: 8px;
+            background: $white;
+            border: none;
+            border-radius: 4px;
+            opacity: 0.6;
           }
 
           &__label {
@@ -218,6 +184,15 @@ body {
             font-weight: 500;
             text-align: center;
             color: $base-dark-color;
+          }
+
+          &.filled {
+            color: $light-yellow;
+            font-weight: 700;
+
+            &::after {
+              opacity: 1;
+            }
           }
         }
 
@@ -247,11 +222,28 @@ body {
             @include calculator-label;
 
             @include shine-hover-effect;
+
+            &:after {
+              position: absolute;
+              content: "";
+              left: 0;
+              bottom: 0;
+              width: 8px;
+              height: 8px;
+              background: $white;
+              border: none;
+              border-radius: 4px;
+              opacity: 0.6;
+            }
           }
 
           .checkbox__input:checked + .checkbox__label {
             color: $light-yellow;
-            text-decoration-line: line-through;
+            font-weight: 700;
+
+            &:after {
+              opacity: 1;
+            }
           }
 
           //dodac to js'em
@@ -284,30 +276,29 @@ body {
             @include calculator-label;
 
             @include shine-hover-effect;
+
+            &:after {
+              position: absolute;
+              content: "";
+              left: 0;
+              bottom: 0;
+              width: 8px;
+              height: 8px;
+              background: $white;
+              border: none;
+              border-radius: 4px;
+              opacity: 0.6;
+            }
           }
 
           .radio__input:checked + .radio__label {
             color: $light-yellow;
-            text-decoration-line: line-through;
+            font-weight: 700;
+
+            &:after {
+              opacity: 1;
+            }
           }
-        }
-
-        .next-page {
-          align-self: center;
-          margin: 16px auto 0;
-          width: 40%;
-          max-width: 140px;
-          padding: 8px 0;
-          border: none;
-          border-radius: 8px;
-          font-family: $text-base-font;
-          font-size: 16px;
-          font-weight: 700;
-          cursor: pointer;
-          background-color: $dark-yellow;
-          background: linear-gradient(225deg, $dark-yellow 0%, $base-yellow 20%, $light-yellow 100%);
-
-          @include shine-hover-effect;
         }
 
         @media (min-width: 768px) {

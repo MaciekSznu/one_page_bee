@@ -20,8 +20,8 @@
   width: 25px;
   height: 50px;
   content: "";
-  background-image: url("./images/svg/dots_9px_9px_3_3.svg");
-  background-size: 100%;
+  background-image: url("./images/svg/dots_12px_12px_2_2.svg");
+  background-size: 50%;
   opacity: 0.75;
 }
 
@@ -31,7 +31,7 @@
     left: 60px;
     width: 50px;
     height: 100px;
-    background-size: 75%;
+    background-size: 50%;
   }
 }
 
@@ -41,7 +41,7 @@
     left: 60px;
     width: 100px;
     height: 100px;
-    background-size: 50%;
+    background-size: 25%;
   }
 }
 
@@ -212,8 +212,8 @@
   width: 25px;
   height: 50px;
   content: "";
-  background-image: url("./images/svg/dots_9px_9px_3_3.svg");
-  background-size: 100%;
+  background-image: url("./images/svg/dots_12px_12px_2_2.svg");
+  background-size: 50%;
   opacity: 0.75;
 }
 
@@ -223,7 +223,7 @@
     right: 60px;
     width: 50px;
     height: 100px;
-    background-size: 75%;
+    background-size: 50%;
   }
 }
 
@@ -233,7 +233,7 @@
     right: 60px;
     width: 100px;
     height: 100px;
-    background-size: 50%;
+    background-size: 25%;
   }
 }
 
@@ -249,8 +249,8 @@
   width: 25px;
   height: 50px;
   content: "";
-  background-image: url("./images/svg/dots_9px_9px_3_3.svg");
-  background-size: 100%;
+  background-image: url("./images/svg/dots_12px_12px_2_2.svg");
+  background-size: 50%;
   opacity: 0.75;
 }
 
@@ -260,7 +260,7 @@
     left: 60px;
     width: 50px;
     height: 100px;
-    background-size: 75%;
+    background-size: 50%;
   }
 }
 
@@ -270,7 +270,7 @@
     left: 60px;
     width: 100px;
     height: 100px;
-    background-size: 50%;
+    background-size: 25%;
   }
 }
 
@@ -435,8 +435,8 @@
   width: 25px;
   height: 50px;
   content: "";
-  background-image: url("./images/svg/dots_9px_9px_3_3.svg");
-  background-size: 100%;
+  background-image: url("./images/svg/dots_12px_12px_2_2.svg");
+  background-size: 50%;
   opacity: 0.75;
 }
 
@@ -446,7 +446,7 @@
     right: 60px;
     width: 50px;
     height: 100px;
-    background-size: 75%;
+    background-size: 50%;
   }
 }
 
@@ -456,7 +456,7 @@
     right: 60px;
     width: 100px;
     height: 100px;
-    background-size: 50%;
+    background-size: 25%;
   }
 }
 
@@ -472,8 +472,8 @@
   width: 25px;
   height: 50px;
   content: "";
-  background-image: url("./images/svg/dots_9px_9px_3_3.svg");
-  background-size: 100%;
+  background-image: url("./images/svg/dots_12px_12px_2_2.svg");
+  background-size: 50%;
   opacity: 0.75;
 }
 
@@ -483,7 +483,7 @@
     left: 60px;
     width: 50px;
     height: 100px;
-    background-size: 75%;
+    background-size: 50%;
   }
 }
 
@@ -493,7 +493,7 @@
     left: 60px;
     width: 100px;
     height: 100px;
-    background-size: 50%;
+    background-size: 25%;
   }
 }
 
@@ -714,8 +714,8 @@
   width: 25px;
   height: 50px;
   content: "";
-  background-image: url("./images/svg/dots_9px_9px_3_3.svg");
-  background-size: 100%;
+  background-image: url("./images/svg/dots_12px_12px_2_2.svg");
+  background-size: 50%;
   opacity: 0.75;
 }
 
@@ -725,7 +725,7 @@
     right: 60px;
     width: 50px;
     height: 100px;
-    background-size: 75%;
+    background-size: 50%;
   }
 }
 
@@ -735,7 +735,7 @@
     right: 60px;
     width: 100px;
     height: 100px;
-    background-size: 50%;
+    background-size: 25%;
   }
 }
 
